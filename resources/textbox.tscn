@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://mbdroruj0w63"]
+
+[node name="Textbox" type="CanvasLayer" unique_id=1322092616]
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2074717569]
+anchors_preset = -1
+anchor_left = 0.441
+anchor_top = 0.049000002
+anchor_right = 0.818
+anchor_bottom = 0.30600002
+offset_left = -0.03201294
+offset_top = 0.24799919
+offset_right = -0.33599854
+offset_bottom = -0.28800964
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="Panel" type="Panel" parent="MarginContainer" unique_id=1726366132]
+layout_mode = 2
