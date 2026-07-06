@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://brc1age5mevd3"]
+
+[ext_resource type="Script" uid="uid://vaqyq0u41obc" path="res://main_menu.gd" id="1_dy5lf"]
+[ext_resource type="Theme" uid="uid://1casi3s2t3el" path="res://resources/button.tres" id="2_7gogf"]
+
+[node name="Main Menu" type="Node2D" unique_id=1883568903]
+script = ExtResource("1_dy5lf")
+
+[node name="Button_manager" type="Control" parent="." unique_id=824363428]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start" type="Button" parent="Button_manager" unique_id=749278499]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 167.0
+offset_right = 258.0
+offset_bottom = 232.0
+theme = ExtResource("2_7gogf")
+text = "START"
+alignment = 0
+
+[node name="Settings" type="Button" parent="Button_manager" unique_id=2093249924]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 249.0
+offset_right = 257.0
+offset_bottom = 312.0
+theme = ExtResource("2_7gogf")
+text = "SETTINGS"
+alignment = 0
+
+[node name="Quit" type="Button" parent="Button_manager" unique_id=92168929]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 334.0
+offset_right = 254.0
+offset_bottom = 393.0
+theme = ExtResource("2_7gogf")
+text = "QUIT"
+alignment = 0
+
+[connection signal="pressed" from="Button_manager/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Button_manager/Start" to="Button_manager/Start" method="_on_pressed"]
+[connection signal="pressed" from="Button_manager/Quit" to="." method="_on_quit_pressed"]

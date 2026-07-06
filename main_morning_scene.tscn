@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b3qukhixynan0"]
+
+[ext_resource type="Texture2D" uid="uid://celg1fblhtiti" path="res://postman-dithered(2)(2).png" id="1_7c3yd"]
+[ext_resource type="Texture2D" uid="uid://digm0wrryknns" path="res://table-dithered.png" id="2_r1kul"]
+[ext_resource type="PackedScene" uid="uid://bnq56is3fuyv8" path="res://node_2d.tscn" id="3_uwo4r"]
+
+[node name="main morning scene" type="Node2D" unique_id=2058312407]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1138173405]
+position = Vector2(139, 210)
+scale = Vector2(1.208125, 1.208125)
+texture = ExtResource("1_7c3yd")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2124660757]
+position = Vector2(569, 252)
+scale = Vector2(1.6269765, 1.6269764)
+texture = ExtResource("2_r1kul")
+
+[node name="letters" parent="." unique_id=1833086408 instance=ExtResource("3_uwo4r")]
+position = Vector2(355, 485)
