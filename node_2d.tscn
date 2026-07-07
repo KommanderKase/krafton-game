@@ -11,14 +11,14 @@ font_size = 25
 font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cwk65"]
-size = Vector2(89, 65)
+size = Vector2(156.5, 112)
 
 [node name="letters" type="Node2D" unique_id=1833086408]
 script = ExtResource("1_epypp")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1301575734]
-position = Vector2(1, 0)
-scale = Vector2(0.125, 0.125)
+position = Vector2(1.0000076, 3.8146973e-06)
+scale = Vector2(0.21916667, 0.21916667)
 texture = ExtResource("2_0hol4")
 
 [node name="Label" type="Label" parent="Sprite2D" unique_id=2147380506]
@@ -40,6 +40,6 @@ metadata/_edit_use_anchors_ = true
 [node name="Area2D" type="Area2D" parent="." unique_id=1878004267]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=658287060]
-position = Vector2(1.5, -0.5)
+position = Vector2(1.25, 0)
 shape = SubResource("RectangleShape2D_cwk65")
 script = ExtResource("3_q6r6c")

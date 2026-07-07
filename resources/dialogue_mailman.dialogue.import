@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://twa1fehlpvs"
+path="res://.godot/imported/dialogue_mailman.dialogue-91ff60bcb23daf98ee5affd88cabd10f.tres"
+
+[deps]
+
+source_file="res://resources/dialogue_mailman.dialogue"
+dest_files=["res://.godot/imported/dialogue_mailman.dialogue-91ff60bcb23daf98ee5affd88cabd10f.tres"]
+
+[params]
+
+defaults=true

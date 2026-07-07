@@ -5,6 +5,5 @@
 [node name="stamp" type="Node2D" unique_id=1084726922]
 
 [node name="PostStamp1Dithered" type="Sprite2D" parent="." unique_id=472073247]
-position = Vector2(1.9999981, -1.0000005)
-scale = Vector2(0.17418033, 0.17418033)
+scale = Vector2(0.06343922, 0.06343921)
 texture = ExtResource("1_nk6vt")
