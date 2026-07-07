@@ -1,19 +1,59 @@
 [gd_scene format=3 uid="uid://mbdroruj0w63"]
 
+[ext_resource type="Script" uid="uid://blktrbxqw2cmm" path="res://resources/textbox.gd" id="1_os6ao"]
+
 [node name="Textbox" type="CanvasLayer" unique_id=1322092616]
+script = ExtResource("1_os6ao")
+DRAW_SPEED = null
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2074717569]
+[node name="bg" type="PanelContainer" parent="." unique_id=2120398473]
 anchors_preset = -1
-anchor_left = 0.441
-anchor_top = 0.049000002
-anchor_right = 0.818
-anchor_bottom = 0.30600002
-offset_left = -0.03201294
-offset_top = 0.24799919
-offset_right = -0.33599854
-offset_bottom = -0.28800964
-size_flags_horizontal = 8
-size_flags_vertical = 4
+anchor_left = 0.5
+anchor_top = 0.13100001
+anchor_right = 0.93600005
+anchor_bottom = 0.33800003
+offset_top = 0.11199188
+offset_right = -0.27209473
+offset_bottom = -0.024017334
 
-[node name="Panel" type="Panel" parent="MarginContainer" unique_id=1726366132]
+[node name="mc" type="MarginContainer" parent="bg" unique_id=810751368]
 layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="vb" type="VBoxContainer" parent="bg/mc" unique_id=615917335]
+layout_mode = 2
+
+[node name="Speaker" type="RichTextLabel" parent="bg/mc/vb" unique_id=278891875]
+custom_minimum_size = Vector2(50, 20)
+layout_mode = 2
+size_flags_vertical = 0
+text = "Mailman"
+
+[node name="Text" type="RichTextLabel" parent="bg/mc/vb" unique_id=1238966137]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "aswasdwasdwasd"
+
+[node name="Options_list" type="ItemList" parent="." unique_id=685812844]
+anchors_preset = -1
+anchor_left = 0.499
+anchor_top = 0.367
+anchor_right = 0.93500006
+anchor_bottom = 0.47500002
+offset_left = 0.15197754
+offset_top = 0.18399048
+offset_right = -0.12011719
+offset_bottom = 0.19998169
+max_columns = 3
+same_column_width = true
+
+[node name="option_button" type="Button" parent="." unique_id=1843734132]
+offset_left = 575.0
+offset_top = 238.0
+offset_right = 583.0
+offset_bottom = 246.0

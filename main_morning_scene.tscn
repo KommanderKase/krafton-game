@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://b3qukhixynan0"]
 
 [ext_resource type="Texture2D" uid="uid://celg1fblhtiti" path="res://postman-dithered(2)(2).png" id="1_7c3yd"]
+[ext_resource type="Script" uid="uid://ddsxkgsjx3ovw" path="res://main_morning_scene.gd" id="1_qu4aq"]
 [ext_resource type="Texture2D" uid="uid://digm0wrryknns" path="res://table-dithered.png" id="2_r1kul"]
 [ext_resource type="PackedScene" uid="uid://bnq56is3fuyv8" path="res://node_2d.tscn" id="3_uwo4r"]
 
 [node name="main morning scene" type="Node2D" unique_id=2058312407]
+script = ExtResource("1_qu4aq")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1138173405]
 position = Vector2(139, 210)
