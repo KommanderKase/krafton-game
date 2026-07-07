@@ -1,6 +1,22 @@
 ~ start
 Mailman: Yo, what's up man
 Mailman: How are you settling down here?
-- Im fine
-- I like you
-- I wanna kill myself
+- Im fine => fine
+- I like you => like
+- I wanna kill myself => suicide
+
+~ fine
+Mailman: Greeaatt....
+Mailman: So lemme show you how this stuff works
+=> END
+
+~ like
+Mailman: Wh-[wait=0.8] [wave]WHAT??[/wave]
+Mailman: [speed=0.4]......
+Mailman: B-[wait=1]Baka!!!!
+=> END
+
+~ suicide
+Mailman: what??
+Mailman: why?!?!?!?!?!
+=> END
