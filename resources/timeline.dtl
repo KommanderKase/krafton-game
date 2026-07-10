@@ -1,0 +1,17 @@
+mailman: Hey, hey, hey, how ya doin pal?
+mailman: How're ya settlin' down here?
+- Fine
+	jump timeline/good
+- Alright
+	jump timeline/good
+- Horribly
+	jump timeline/horrible
+label good
+mailman: That's great!
+mailman: Seeing how it's so different from the big city out here i was expecting you to have a tough time
+[end_timeline]
+label horrible
+mailman: Well, i suppose it's to be expected
+mailman: But what can ya do?
+mailman: You'll get used to it
+[end_timeline]

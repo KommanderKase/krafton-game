@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://dsiuh48cjbkwu" path="res://node_2d.gd" id="1_epypp"]
 [ext_resource type="Texture2D" uid="uid://ccuvr53x4fq4g" path="res://white-envelope-letter-PNG-thumb25-dithered.png" id="2_0hol4"]
 [ext_resource type="FontFile" uid="uid://cg05a2xlclp4v" path="res://JAi_____.TTF" id="3_kdubu"]
-[ext_resource type="Script" uid="uid://howm176l6sfw" path="res://collision_shape_2d.gd" id="3_q6r6c"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0e48y"]
 font = ExtResource("3_kdubu")
@@ -42,4 +41,3 @@ metadata/_edit_use_anchors_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=658287060]
 position = Vector2(1.25, 0)
 shape = SubResource("RectangleShape2D_cwk65")
-script = ExtResource("3_q6r6c")

@@ -20,3 +20,9 @@ texture = ExtResource("2_r1kul")
 
 [node name="letters" parent="." unique_id=1833086408 instance=ExtResource("3_uwo4r")]
 position = Vector2(355, 485)
+
+[node name="Control" type="Control" parent="." unique_id=961741963]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
