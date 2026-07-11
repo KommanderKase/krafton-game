@@ -34,7 +34,10 @@ layout/style_directory={
 }
 layout/style_list=["res://resources/textbox_style.tres"]
 layout/default_style="res://resources/textbox_style.tres"
-variables={}
+variables={
+"Letter": "letter_spawn",
+"letter_moved": 0.0
+}
 glossary/default_case_sensitive=true
 
 [dialogue_manager]

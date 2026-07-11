@@ -9,9 +9,19 @@ mailman: How're ya settlin' down here?
 label good
 mailman: That's great!
 mailman: Seeing how it's so different from the big city out here i was expecting you to have a tough time
-[end_timeline]
+jump timeline/work start
 label horrible
 mailman: Well, i suppose it's to be expected
 mailman: But what can ya do?
 mailman: You'll get used to it
-[end_timeline]
+jump timeline/work start
+label work start
+mailman: Alright, lemme show ya how you deal with letters
+[signal arg="letter_spawn"]
+mailman: We'll be working with these a lot
+mailman: Try dragging it around, get a feel for it \
+(Hold Left Click and drag)
+[wait time="10.0" skippable="true"]
+if {letter_moved} == 2.0:
+	mailman: good.. good..
+	mailman: now you should try stamping it

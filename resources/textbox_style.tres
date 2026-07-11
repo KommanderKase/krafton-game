@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://cqpb3ie51rwl5" path="res://addons/dialogic/Modules/DefaultLayoutParts/Base_Default/default_layout_base.tscn" id="1_5ck5e"]
 [ext_resource type="Script" uid="uid://bwg6yncmh2cml" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_5tnwk"]
 [ext_resource type="PackedScene" uid="uid://cqnhpvvtstxct" path="res://resources/VisualNovelTextbox/custom_visual_novel_textbox.tscn" id="4_oagyg"]
-[ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="5_lp5q3"]
 [ext_resource type="PackedScene" uid="uid://cc1hmcqoto7t4" path="res://resources/CenteredChoices/custom_centered_choices.tscn" id="6_oagyg"]
 [ext_resource type="PackedScene" uid="uid://dsbwnp5hegnu3" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.tscn" id="7_53501"]
 [ext_resource type="Script" uid="uid://dv08k6ljua6fm" path="res://addons/dialogic/Resources/dialogic_style.gd" id="11_3v3wn"]
@@ -11,10 +10,6 @@
 [sub_resource type="Resource" id="Resource_yrxht"]
 script = ExtResource("2_5tnwk")
 scene = ExtResource("1_5ck5e")
-
-[sub_resource type="Resource" id="Resource_5jjlt"]
-script = ExtResource("2_5tnwk")
-scene = ExtResource("5_lp5q3")
 
 [sub_resource type="Resource" id="Resource_e6hlv"]
 script = ExtResource("2_5tnwk")
@@ -24,7 +19,6 @@ overrides = {
 "box_animation_out": "0",
 "box_color_custom": "Color(1, 1, 1, 1)",
 "box_color_use_global": "false",
-"box_margin_bottom": "0.0",
 "box_panel": "\"res://resources/texture_box.tres\"",
 "name_label_box_offset": "Vector2(225, 40)",
 "next_indicator_animation": "2",
@@ -35,6 +29,7 @@ overrides = {
 "normal_font": "\"res://RobotoSlab-VariableFont_wght.ttf\"",
 "text_use_global_color": "false",
 "text_use_global_font": "false",
+"text_use_global_size": "false",
 "typing_sounds_mode": "2",
 "typing_sounds_pitch_variance": "0.5"
 }
@@ -54,10 +49,9 @@ overrides = {
 [resource]
 script = ExtResource("11_3v3wn")
 name = "textbox_style"
-layer_list = Array[String](["12", "13", "14", "15"])
+layer_list = Array[String](["13", "14", "15"])
 layer_info = {
 "": SubResource("Resource_yrxht"),
-"12": SubResource("Resource_5jjlt"),
 "13": SubResource("Resource_e6hlv"),
 "14": SubResource("Resource_ydr1k"),
 "15": SubResource("Resource_pgdl8")

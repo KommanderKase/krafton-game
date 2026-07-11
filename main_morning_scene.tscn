@@ -2,11 +2,139 @@
 
 [ext_resource type="Texture2D" uid="uid://celg1fblhtiti" path="res://postman-dithered(2)(2).png" id="1_7c3yd"]
 [ext_resource type="Script" uid="uid://ddsxkgsjx3ovw" path="res://main_morning_scene.gd" id="1_qu4aq"]
+[ext_resource type="Texture2D" uid="uid://dy5ram7yvtw30" path="res://wallpaper.jpg" id="2_gu4d3"]
 [ext_resource type="Texture2D" uid="uid://digm0wrryknns" path="res://table-dithered.png" id="2_r1kul"]
 [ext_resource type="PackedScene" uid="uid://bnq56is3fuyv8" path="res://node_2d.tscn" id="3_uwo4r"]
+[ext_resource type="AudioStream" uid="uid://b0yfujllcveyu" path="res://freesound_community-paper-fluttering-31132.mp3" id="5_lj11b"]
+
+[sub_resource type="Animation" id="Animation_gu4d3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("letters:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.05, 0.05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("letters:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.0559242]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("letters:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(181, 275)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_31ni2"]
+resource_name = "letter_give"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("letters:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("letters:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.23333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.05, 0.05), Vector2(1.02, 1.02)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("letters:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.26666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-1.0559242, -6.2831855]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("letters:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.0009999999, 0.26666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(181, 275), Vector2(295, 428.00003)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(-0.0666666, 0, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wjgmu"]
+_data = {
+&"RESET": SubResource("Animation_gu4d3"),
+&"letter_give": SubResource("Animation_31ni2")
+}
 
 [node name="main morning scene" type="Node2D" unique_id=2058312407]
 script = ExtResource("1_qu4aq")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=2031870099]
+position = Vector2(570.5, 343.99997)
+scale = Vector2(2.1627057, 2.0109587)
+texture = ExtResource("2_gu4d3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1138173405]
 position = Vector2(139, 210)
@@ -14,15 +142,20 @@ scale = Vector2(1.208125, 1.208125)
 texture = ExtResource("1_7c3yd")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2124660757]
-position = Vector2(567, 197)
-scale = Vector2(1.6269765, 2.1856492)
+position = Vector2(567, -45.61873)
+scale = Vector2(1.6269765, 3.1699038)
 texture = ExtResource("2_r1kul")
 
 [node name="letters" parent="." unique_id=1833086408 instance=ExtResource("3_uwo4r")]
-position = Vector2(355, 485)
+position = Vector2(181, 275)
+rotation = -1.0559242
+scale = Vector2(0.05, 0.05)
 
-[node name="Control" type="Control" parent="." unique_id=961741963]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1535522245]
+active = false
+libraries/ = SubResource("AnimationLibrary_wjgmu")
+movie_quit_on_finish = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=126046995]
+position = Vector2(142, 343)
+stream = ExtResource("5_lj11b")
