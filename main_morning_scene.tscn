@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://ddsxkgsjx3ovw" path="res://main_morning_scene.gd" id="1_qu4aq"]
 [ext_resource type="Texture2D" uid="uid://dy5ram7yvtw30" path="res://wallpaper.jpg" id="2_gu4d3"]
 [ext_resource type="Texture2D" uid="uid://digm0wrryknns" path="res://table-dithered.png" id="2_r1kul"]
+[ext_resource type="Script" uid="uid://c0p0l8titvk8q" path="res://start.gd" id="3_31ni2"]
 [ext_resource type="PackedScene" uid="uid://bnq56is3fuyv8" path="res://node_2d.tscn" id="3_uwo4r"]
 [ext_resource type="AudioStream" uid="uid://b0yfujllcveyu" path="res://freesound_community-paper-fluttering-31132.mp3" id="5_lj11b"]
 
@@ -122,28 +123,37 @@ tracks/4/keys = {
 "values": [false, true, false]
 }
 
+[sub_resource type="Animation" id="Animation_wjgmu"]
+resource_name = "new_animation"
+length = 2.0333333
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wjgmu"]
 _data = {
 &"RESET": SubResource("Animation_gu4d3"),
-&"letter_give": SubResource("Animation_31ni2")
+&"letter_give": SubResource("Animation_31ni2"),
+&"new_animation": SubResource("Animation_wjgmu")
 }
 
 [node name="main morning scene" type="Node2D" unique_id=2058312407]
 script = ExtResource("1_qu4aq")
 
 [node name="Sprite2D3" type="Sprite2D" parent="." unique_id=2031870099]
+texture_filter = 1
 position = Vector2(570.5, 343.99997)
 scale = Vector2(2.1627057, 2.0109587)
 texture = ExtResource("2_gu4d3")
+script = ExtResource("3_31ni2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1138173405]
-position = Vector2(139, 210)
-scale = Vector2(1.208125, 1.208125)
+texture_filter = 1
+position = Vector2(202.00002, 316)
+scale = Vector2(1.8032814, 1.8032813)
 texture = ExtResource("1_7c3yd")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2124660757]
-position = Vector2(567, -45.61873)
-scale = Vector2(1.6269765, 3.1699038)
+texture_filter = 1
+position = Vector2(576, 135)
+scale = Vector2(1.5783231, 3.330825)
 texture = ExtResource("2_r1kul")
 
 [node name="letters" parent="." unique_id=1833086408 instance=ExtResource("3_uwo4r")]

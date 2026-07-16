@@ -48,3 +48,8 @@ func spawnStamp() -> void:
 	add_child(stamp)
 	stamp.global_position = get_global_mouse_position()
 	is_stamped = true
+
+func update_dialogicstamp() -> void:
+	if is_stamped:
+		print("stamped")
+		Dialogic.VAR.set_variable("letter_stamped", 2)

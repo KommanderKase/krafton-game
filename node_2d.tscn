@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dsiuh48cjbkwu" path="res://node_2d.gd" id="1_epypp"]
 [ext_resource type="Texture2D" uid="uid://ccuvr53x4fq4g" path="res://white-envelope-letter-PNG-thumb25-dithered.png" id="2_0hol4"]
-[ext_resource type="FontFile" uid="uid://cg05a2xlclp4v" path="res://JAi_____.TTF" id="3_kdubu"]
+[ext_resource type="FontFile" uid="uid://lta56peackiy" path="res://RobotoSlab-VariableFont_wght.ttf" id="3_epypp"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0e48y"]
-font = ExtResource("3_kdubu")
+font = ExtResource("3_epypp")
 font_size = 25
 font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
 
@@ -22,14 +22,14 @@ texture = ExtResource("2_0hol4")
 
 [node name="Label" type="Label" parent="Sprite2D" unique_id=2147380506]
 anchors_preset = -1
-anchor_left = 0.45
-anchor_top = 0.58400005
-anchor_right = 0.715
-anchor_bottom = 0.7931561
-offset_left = -399.63306
-offset_top = -299.75784
-offset_right = -400.25687
-offset_bottom = -312.95782
+anchor_left = 0.317
+anchor_top = 0.652
+anchor_right = 0.582
+anchor_bottom = 0.83900005
+offset_left = -399.63904
+offset_top = -300.27002
+offset_right = -400.26288
+offset_bottom = -300.17636
 text = "Address
 From:
 To:"

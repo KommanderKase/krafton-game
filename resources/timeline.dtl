@@ -1,7 +1,7 @@
 mailman: Hey, hey, hey, how ya doin pal?
 mailman: How're ya settlin' down here?
 - Fine
-	jump timeline/good
+	jump timeline/
 - Alright
 	jump timeline/good
 - Horribly
@@ -19,9 +19,17 @@ label work start
 mailman: Alright, lemme show ya how you deal with letters
 [signal arg="letter_spawn"]
 mailman: We'll be working with these a lot
+label drag it
 mailman: Try dragging it around, get a feel for it \
 (Hold Left Click and drag)
-[wait time="10.0" skippable="true"]
+[wait time="3.0" skippable="true"]
 if {letter_moved} == 2.0:
-	mailman: good.. good..
-	mailman: now you should try stamping it
+	jump dragged
+else:
+	jump drag it
+label dragged
+mailman: good.. good..
+mailman: now you should try stamping it\
+(Press Right Click on the letter to stamp)
+if {letter_stamped} == 2.0:
+	mailman: Alright
