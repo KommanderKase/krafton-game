@@ -18,7 +18,6 @@ func onMosueExit() -> void:
 	mouseEnteredSDFDF = false
 
 func _input(event: InputEvent) -> void:
-
 	if Input.is_action_just_pressed("rightClick") and mouseEnteredSDFDF:
 		if not is_stamped:
 			print("right click got")

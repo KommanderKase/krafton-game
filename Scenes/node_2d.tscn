@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bnq56is3fuyv8"]
 
-[ext_resource type="Script" uid="uid://dsiuh48cjbkwu" path="res://node_2d.gd" id="1_epypp"]
-[ext_resource type="Texture2D" uid="uid://ccuvr53x4fq4g" path="res://white-envelope-letter-PNG-thumb25-dithered.png" id="2_0hol4"]
-[ext_resource type="FontFile" uid="uid://lta56peackiy" path="res://RobotoSlab-VariableFont_wght.ttf" id="3_epypp"]
+[ext_resource type="Script" uid="uid://dsiuh48cjbkwu" path="res://Scripts/node_2d.gd" id="1_epypp"]
+[ext_resource type="Texture2D" uid="uid://ccuvr53x4fq4g" path="res://Assets/Images/Background and Objects/white-envelope-letter-PNG-thumb25-dithered.png" id="2_0hol4"]
+[ext_resource type="FontFile" uid="uid://lta56peackiy" path="res://Assets/Fonts/RobotoSlab-VariableFont_wght.ttf" id="3_epypp"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0e48y"]
 font = ExtResource("3_epypp")
@@ -39,5 +39,6 @@ metadata/_edit_use_anchors_ = true
 [node name="Area2D" type="Area2D" parent="." unique_id=1878004267]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=658287060]
+z_index = 9
 position = Vector2(0, -1.25)
 shape = SubResource("RectangleShape2D_cwk65")

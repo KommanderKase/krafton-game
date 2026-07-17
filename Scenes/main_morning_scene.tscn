@@ -139,7 +139,7 @@ _data = {
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7txcg"]
 shader = ExtResource("9_w3wat")
 shader_parameter/exposure = 1.0990000284525
-shader_parameter/contrast = 0.9740000225150001
+shader_parameter/contrast = 0.974000022515
 shader_parameter/saturation = 0.6610000313975
 shader_parameter/enable_pixelate = true
 shader_parameter/pixel_factor = 3.49600014231
@@ -180,6 +180,7 @@ scale = Vector2(0.6230649, 1.3148896)
 texture = ExtResource("4_31ni2")
 
 [node name="letters" parent="." unique_id=1833086408 instance=ExtResource("3_uwo4r")]
+z_index = 6
 position = Vector2(292, 609)
 rotation = -1.0559242
 scale = Vector2(0.05, 0.05)
@@ -195,9 +196,10 @@ stream = ExtResource("5_lj11b")
 
 [node name="CanvasLayer" parent="." unique_id=521103293 instance=ExtResource("8_x2xv4")]
 layer = 0
+visible = false
 
 [node name="ColorRect2" type="ColorRect" parent="CanvasLayer" unique_id=36084298]
-modulate = Color(1, 1, 1, 1)
+visible = false
 material = SubResource("ShaderMaterial_7txcg")
 anchors_preset = -1
 anchor_top = -0.063271604
@@ -207,9 +209,10 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color(1, 1, 1, 0)
 mouse_filter = 2
+color = Color(1, 1, 1, 0)
 metadata/_edit_use_anchors_ = true
 
-[node name="DialogicLayer" type="CanvasLayer" parent="." unique_id=3934847252]
+[node name="DialogicLayer" type="CanvasLayer" parent="." unique_id=-360120044]
 layer = 10
+visible = false

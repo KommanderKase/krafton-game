@@ -26,7 +26,7 @@ overrides = {
 "next_indicator_show_on_autoadvance": "true",
 "next_indicator_size": "Vector2(80, 80)",
 "next_indicator_texture": "\"res://Assets/Images/New Project(1).png\"",
-"normal_font": "\"res://RobotoSlab-VariableFont_wght.ttf\"",
+"normal_font": "\"res://Assets/Fonts/RobotoSlab-VariableFont_wght.ttf\"",
 "text_use_global_color": "false",
 "text_use_global_font": "false",
 "text_use_global_size": "false",
