@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://vaqyq0u41obc" path="res://main_menu.gd" id="1_dy5lf"]
 [ext_resource type="Theme" uid="uid://1casi3s2t3el" path="res://resources/button.tres" id="2_7gogf"]
 [ext_resource type="AudioStream" uid="uid://dvuqgqotc4r8t" path="res://maintheme.mp3(1).mp3" id="3_fu7sn"]
+[ext_resource type="Script" uid="uid://c0p0l8titvk8q" path="res://start.gd" id="3_jix8l"]
 
 [node name="Main Menu" type="Node2D" unique_id=1883568903]
 script = ExtResource("1_dy5lf")
@@ -22,6 +23,7 @@ offset_bottom = 232.0
 theme = ExtResource("2_7gogf")
 text = "START"
 alignment = 0
+script = ExtResource("3_jix8l")
 
 [node name="Settings" type="Button" parent="Button_manager" unique_id=2093249924]
 layout_mode = 0
