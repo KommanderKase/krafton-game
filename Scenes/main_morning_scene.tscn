@@ -194,6 +194,7 @@ position = Vector2(142, 343)
 stream = ExtResource("5_lj11b")
 
 [node name="CanvasLayer" parent="." unique_id=521103293 instance=ExtResource("8_x2xv4")]
+layer = 0
 
 [node name="ColorRect2" type="ColorRect" parent="CanvasLayer" unique_id=36084298]
 modulate = Color(0, 0, 0, 1)
@@ -208,3 +209,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="DialogicLayer" type="CanvasLayer" parent="." unique_id=3934847252]
+layer = 10
