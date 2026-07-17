@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://c68oykcdhrgbf"]
+[gd_scene format=3 uid="uid://brc1age5mevd3"]
 
-[ext_resource type="Script" path="res://main_menu.gd" id="1_dy5lf"]
+[ext_resource type="Script" uid="uid://vaqyq0u41obc" path="res://Scripts/main_menu.gd" id="1_dy5lf"]
 [ext_resource type="Theme" uid="uid://1casi3s2t3el" path="res://resources/button.tres" id="2_7gogf"]
-[ext_resource type="AudioStream" path="res://maintheme.mp3(1).mp3" id="3_fu7sn"]
-[ext_resource type="Script" path="res://start.gd" id="3_jix8l"]
+[ext_resource type="AudioStream" uid="uid://dvuqgqotc4r8t" path="res://Assets/Audio/maintheme.mp3(1).mp3" id="3_fu7sn"]
+[ext_resource type="Script" uid="uid://c0p0l8titvk8q" path="res://Scripts/start.gd" id="3_jix8l"]
 
 [node name="Main Menu" type="Node2D" unique_id=1883568903]
 script = ExtResource("1_dy5lf")

@@ -22,8 +22,8 @@ Dialogic="*uid://ds2q0uclmolvu"
 [dialogic]
 
 directories/dch_directory={
-"mailman": "res://resources/mailman.dch",
-"unit_test_character": "res://Tests/Resources/unit_test_character.dch"
+"Resources/unit_test_character": "res://Tests FROM DIALOGIC DO NOT TOUCH/Resources/unit_test_character.dch",
+"mailman": "res://resources/mailman.dch"
 }
 directories/dtl_directory={
 "minor letter stamped": "res://resources/minor letter stamped.dtl",

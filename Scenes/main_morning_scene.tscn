@@ -1,0 +1,210 @@
+[gd_scene format=3 uid="uid://b3qukhixynan0"]
+
+[ext_resource type="Script" uid="uid://ddsxkgsjx3ovw" path="res://Scripts/main_morning_scene.gd" id="1_qu4aq"]
+[ext_resource type="Texture2D" uid="uid://cyu30tvei0y6s" path="res://Assets/Images/Background and Objects/MORNING SKY AND BUILDINGS.png" id="2_31ni2"]
+[ext_resource type="Texture2D" uid="uid://cvrhekhnevhu2" path="res://Assets/Images/Characters/MAILMAN.png" id="3_gu4d3"]
+[ext_resource type="PackedScene" uid="uid://bnq56is3fuyv8" path="res://Scenes/node_2d.tscn" id="3_uwo4r"]
+[ext_resource type="Texture2D" uid="uid://b6djlspdhga8s" path="res://Assets/Images/Background and Objects/WINDOWS ONLY.png" id="3_wjgmu"]
+[ext_resource type="Texture2D" uid="uid://d3emd3km388r4" path="res://Assets/Images/Background and Objects/WORKTABLE.png" id="4_31ni2"]
+[ext_resource type="AudioStream" uid="uid://b0yfujllcveyu" path="res://Assets/Audio/freesound_community-paper-fluttering-31132.mp3" id="5_lj11b"]
+[ext_resource type="PackedScene" uid="uid://b4xrecfga0b35" path="res://canvas_layer.tscn" id="8_x2xv4"]
+[ext_resource type="Shader" uid="uid://c7yfndqihqbs0" path="res://resources/Shader/main_dithered_shader.gdshader" id="9_w3wat"]
+
+[sub_resource type="Animation" id="Animation_gu4d3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("letters:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.05, 0.05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("letters:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.0559242]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("letters:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(181, 275)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_31ni2"]
+resource_name = "letter_give"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("letters:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("letters:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.23333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.05, 0.05), Vector2(1.02, 1.02)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("letters:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.26666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-1.0559242, -6.2831855]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("letters:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.0009999999, 0.26666668, 0.2733334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(181, 275), Vector2(295, 428.00003), Vector2(292, 609)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(-0.0666666, 0, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_wjgmu"]
+resource_name = "new_animation"
+length = 2.0333333
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wjgmu"]
+_data = {
+&"RESET": SubResource("Animation_gu4d3"),
+&"letter_give": SubResource("Animation_31ni2"),
+&"new_animation": SubResource("Animation_wjgmu")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7txcg"]
+shader = ExtResource("9_w3wat")
+shader_parameter/exposure = 1.0990000284525
+shader_parameter/contrast = 0.9740000225150001
+shader_parameter/saturation = 0.6610000313975
+shader_parameter/enable_pixelate = true
+shader_parameter/pixel_factor = 3.49600014231
+shader_parameter/enable_posterize = true
+shader_parameter/color_levels = 12.0
+shader_parameter/dither_strength = 1.0
+shader_parameter/chrom_aberration = 0.0
+shader_parameter/vignette_strength = 0.0
+shader_parameter/grain_strength = 0.0
+shader_parameter/tint_color = Vector3(0.95, 1.03, 0.9)
+shader_parameter/tint_strength = 0.15
+shader_parameter/viewport_size_override = Vector2(0, 0)
+
+[node name="main morning scene" type="Node2D" unique_id=2058312407]
+script = ExtResource("1_qu4aq")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1497674278]
+position = Vector2(570.00006, 216.00002)
+scale = Vector2(0.7712963, 0.7712963)
+texture = ExtResource("2_31ni2")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=2031870099]
+texture_filter = 1
+position = Vector2(560, 354)
+scale = Vector2(0.74734503, 0.69490737)
+texture = ExtResource("3_wjgmu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1138173405]
+texture_filter = 1
+position = Vector2(251, 346)
+scale = Vector2(0.5608269, 0.56082684)
+texture = ExtResource("3_gu4d3")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2124660757]
+texture_filter = 1
+position = Vector2(586, -59)
+scale = Vector2(0.6230649, 1.3148896)
+texture = ExtResource("4_31ni2")
+
+[node name="letters" parent="." unique_id=1833086408 instance=ExtResource("3_uwo4r")]
+position = Vector2(292, 609)
+rotation = -1.0559242
+scale = Vector2(0.05, 0.05)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1535522245]
+active = false
+libraries/ = SubResource("AnimationLibrary_wjgmu")
+movie_quit_on_finish = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=126046995]
+position = Vector2(142, 343)
+stream = ExtResource("5_lj11b")
+
+[node name="CanvasLayer" parent="." unique_id=521103293 instance=ExtResource("8_x2xv4")]
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer" unique_id=36084298]
+modulate = Color(0, 0, 0, 1)
+material = SubResource("ShaderMaterial_7txcg")
+anchors_preset = -1
+anchor_top = -0.063271604
+anchor_right = 1.0911459
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true

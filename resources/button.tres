@@ -1,6 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://1casi3s2t3el"]
 
-[ext_resource type="FontFile" uid="uid://lta56peackiy" path="res://RobotoSlab-VariableFont_wght.ttf" id="1_dpgc7"]
+[ext_resource type="FontFile" path="res://RobotoSlab-VariableFont_wght.ttf" id="1_dpgc7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p8ksp"]
 content_margin_left = 4.0
