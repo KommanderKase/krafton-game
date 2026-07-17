@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://ddsxkgsjx3ovw" path="res://main_morning_scene.gd" id="1_qu4aq"]
 [ext_resource type="Texture2D" uid="uid://dy5ram7yvtw30" path="res://wallpaper.jpg" id="2_gu4d3"]
 [ext_resource type="Texture2D" uid="uid://digm0wrryknns" path="res://table-dithered.png" id="2_r1kul"]
-[ext_resource type="Script" uid="uid://c0p0l8titvk8q" path="res://start.gd" id="3_31ni2"]
 [ext_resource type="PackedScene" uid="uid://bnq56is3fuyv8" path="res://node_2d.tscn" id="3_uwo4r"]
 [ext_resource type="AudioStream" uid="uid://b0yfujllcveyu" path="res://freesound_community-paper-fluttering-31132.mp3" id="5_lj11b"]
 
@@ -142,7 +141,6 @@ texture_filter = 1
 position = Vector2(570.5, 343.99997)
 scale = Vector2(2.1627057, 2.0109587)
 texture = ExtResource("2_gu4d3")
-script = ExtResource("3_31ni2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1138173405]
 texture_filter = 1
