@@ -48,5 +48,4 @@ stream = ExtResource("3_fu7sn")
 autoplay = true
 
 [connection signal="pressed" from="Button_manager/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Button_manager/Start" to="Button_manager/Start" method="_on_pressed"]
 [connection signal="pressed" from="Button_manager/Quit" to="." method="_on_quit_pressed"]
