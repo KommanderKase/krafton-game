@@ -1,6 +1,6 @@
 [gd_resource type="StyleBoxTexture" format=3 uid="uid://d2g3o6xepee2s"]
 
-[ext_resource type="Texture2D" uid="uid://duliqjnntsmxv" path="res://custom_textbox.png" id="1_5j3qk"]
+[ext_resource type="Texture2D" uid="uid://gs80uyqil42b" path="res://Assets/Images/Textbox.png" id="1_5j3qk"]
 
 [resource]
 content_margin_left = 10.0

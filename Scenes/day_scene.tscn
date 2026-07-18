@@ -3,9 +3,10 @@
 [ext_resource type="Script" uid="uid://3ajufksunddq" path="res://Scripts/day_scene.gd" id="1_7vt43"]
 [ext_resource type="Texture2D" uid="uid://cyu30tvei0y6s" path="res://Assets/Images/Background and Objects/MORNING SKY AND BUILDINGS.png" id="1_jjwb3"]
 [ext_resource type="Texture2D" uid="uid://b6djlspdhga8s" path="res://Assets/Images/Background and Objects/WINDOWS ONLY.png" id="2_ck12u"]
-[ext_resource type="Texture2D" uid="uid://cvrhekhnevhu2" path="res://Assets/Images/Characters/MAILMAN.png" id="3_7vt43"]
 [ext_resource type="Texture2D" uid="uid://ru23ms38tr2i" path="res://Assets/Images/Background and Objects/WORKTABLE-DAY.png" id="4_ck12u"]
+[ext_resource type="Texture2D" uid="uid://dtapamlbvbujq" path="res://Assets/Images/Characters/MAILMAN SHADOW.png" id="4_jjwb3"]
 [ext_resource type="Texture2D" uid="uid://dbgl6imhircbg" path="res://Assets/Images/Background and Objects/CARDBOARD.png" id="5_7vt43"]
+[ext_resource type="Texture2D" uid="uid://c23n7jixmuvfn" path="res://Assets/Images/Characters/MAILMAN-BLUEST.png" id="5_ck12u"]
 [ext_resource type="PackedScene" uid="uid://bnq56is3fuyv8" path="res://Scenes/node_2d.tscn" id="5_jxcnm"]
 [ext_resource type="AudioStream" uid="uid://b0yfujllcveyu" path="res://Assets/Audio/freesound_community-paper-fluttering-31132.mp3" id="6_07qo7"]
 
@@ -128,7 +129,7 @@ tracks/4/keys = {
 resource_name = "new_animation"
 length = 2.0333333
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_r4ytk"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_le5y8"]
 _data = {
 &"RESET": SubResource("Animation_gu4d3"),
 &"letter_give": SubResource("Animation_31ni2"),
@@ -138,32 +139,37 @@ _data = {
 [node name="day scene" type="Node2D" unique_id=541089571]
 script = ExtResource("1_7vt43")
 
-[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1124046269]
+[node name="SKY" type="Sprite2D" parent="." unique_id=1122869075]
 position = Vector2(570.00006, 216.00002)
 scale = Vector2(0.7712963, 0.7712963)
 texture = ExtResource("1_jjwb3")
 
-[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=2133109738]
+[node name="BACKGROUND" type="Sprite2D" parent="." unique_id=218239068]
 texture_filter = 1
 position = Vector2(560, 354)
 scale = Vector2(0.74734503, 0.69490737)
 texture = ExtResource("2_ck12u")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=919962956]
-texture_filter = 1
-position = Vector2(264, 303)
-scale = Vector2(0.5608269, 0.56082684)
-texture = ExtResource("3_7vt43")
+[node name="MAILMAN OUTLINE" type="Sprite2D" parent="." unique_id=2119328655]
+position = Vector2(260, 298.83173)
+scale = Vector2(0.603125, 0.592281)
+texture = ExtResource("4_jjwb3")
 
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1092914367]
+[node name="MAILMAN" type="Sprite2D" parent="." unique_id=638741522]
 texture_filter = 1
-position = Vector2(572.99994, 108.000015)
+position = Vector2(260, 298.8317)
+scale = Vector2(0.5608269, 0.56082684)
+texture = ExtResource("5_ck12u")
+
+[node name="TABLE" type="Sprite2D" parent="." unique_id=475664975]
+texture_filter = 1
+position = Vector2(570.99994, 101.999985)
 scale = Vector2(0.6230649, 1.3148896)
 texture = ExtResource("4_ck12u")
 
-[node name="Sprite2D5" type="Sprite2D" parent="." unique_id=400572683]
-position = Vector2(851, 459)
-scale = Vector2(0.5037037, 0.5037037)
+[node name="BOX" type="Sprite2D" parent="." unique_id=69184070]
+position = Vector2(866, 438)
+scale = Vector2(0.6018518, 0.6018519)
 texture = ExtResource("5_7vt43")
 
 [node name="letters" parent="." unique_id=1833086408 instance=ExtResource("5_jxcnm")]
@@ -172,11 +178,11 @@ position = Vector2(292, 609)
 rotation = -1.0559242
 scale = Vector2(0.05, 0.05)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1293418915]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1268016854]
 active = false
-libraries/ = SubResource("AnimationLibrary_r4ytk")
+libraries/ = SubResource("AnimationLibrary_le5y8")
 movie_quit_on_finish = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=822992192]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1978227331]
 position = Vector2(142, 343)
 stream = ExtResource("6_07qo7")
