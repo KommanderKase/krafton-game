@@ -1,4 +1,182 @@
 [gd_scene format=3 uid="uid://bjqmvo4433wfn"]
 
+[ext_resource type="Script" uid="uid://3ajufksunddq" path="res://Scripts/day_scene.gd" id="1_7vt43"]
+[ext_resource type="Texture2D" uid="uid://cyu30tvei0y6s" path="res://Assets/Images/Background and Objects/MORNING SKY AND BUILDINGS.png" id="1_jjwb3"]
+[ext_resource type="Texture2D" uid="uid://b6djlspdhga8s" path="res://Assets/Images/Background and Objects/WINDOWS ONLY.png" id="2_ck12u"]
+[ext_resource type="Texture2D" uid="uid://cvrhekhnevhu2" path="res://Assets/Images/Characters/MAILMAN.png" id="3_7vt43"]
+[ext_resource type="Texture2D" uid="uid://ru23ms38tr2i" path="res://Assets/Images/Background and Objects/WORKTABLE-DAY.png" id="4_ck12u"]
+[ext_resource type="Texture2D" uid="uid://dbgl6imhircbg" path="res://Assets/Images/Background and Objects/CARDBOARD.png" id="5_7vt43"]
+[ext_resource type="PackedScene" uid="uid://bnq56is3fuyv8" path="res://Scenes/node_2d.tscn" id="5_jxcnm"]
+[ext_resource type="AudioStream" uid="uid://b0yfujllcveyu" path="res://Assets/Audio/freesound_community-paper-fluttering-31132.mp3" id="6_07qo7"]
+
+[sub_resource type="Animation" id="Animation_gu4d3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("letters:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.05, 0.05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("letters:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.0559242]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("letters:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(181, 275)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_31ni2"]
+resource_name = "letter_give"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("letters:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("letters:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.23333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.05, 0.05), Vector2(1.02, 1.02)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("letters:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.26666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-1.0559242, -6.2831855]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("letters:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.0009999999, 0.26666668, 0.2733334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(181, 275), Vector2(295, 428.00003), Vector2(292, 609)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(-0.0666666, 0, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_wjgmu"]
+resource_name = "new_animation"
+length = 2.0333333
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r4ytk"]
+_data = {
+&"RESET": SubResource("Animation_gu4d3"),
+&"letter_give": SubResource("Animation_31ni2"),
+&"new_animation": SubResource("Animation_wjgmu")
+}
+
 [node name="day scene" type="Node2D" unique_id=541089571]
-position = Vector2(4, -2)
+script = ExtResource("1_7vt43")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1124046269]
+position = Vector2(570.00006, 216.00002)
+scale = Vector2(0.7712963, 0.7712963)
+texture = ExtResource("1_jjwb3")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=2133109738]
+texture_filter = 1
+position = Vector2(560, 354)
+scale = Vector2(0.74734503, 0.69490737)
+texture = ExtResource("2_ck12u")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=919962956]
+texture_filter = 1
+position = Vector2(264, 303)
+scale = Vector2(0.5608269, 0.56082684)
+texture = ExtResource("3_7vt43")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1092914367]
+texture_filter = 1
+position = Vector2(572.99994, 108.000015)
+scale = Vector2(0.6230649, 1.3148896)
+texture = ExtResource("4_ck12u")
+
+[node name="Sprite2D5" type="Sprite2D" parent="." unique_id=400572683]
+position = Vector2(851, 459)
+scale = Vector2(0.5037037, 0.5037037)
+texture = ExtResource("5_7vt43")
+
+[node name="letters" parent="." unique_id=1833086408 instance=ExtResource("5_jxcnm")]
+z_index = 6
+position = Vector2(292, 609)
+rotation = -1.0559242
+scale = Vector2(0.05, 0.05)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1293418915]
+active = false
+libraries/ = SubResource("AnimationLibrary_r4ytk")
+movie_quit_on_finish = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=822992192]
+position = Vector2(142, 343)
+stream = ExtResource("6_07qo7")

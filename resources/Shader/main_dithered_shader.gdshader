@@ -2,6 +2,12 @@ shader_type canvas_item;
 
 uniform sampler2D screen_tex : hint_screen_texture;
 
+// Controls the edge sharpening intensity before dithering
+uniform float sharpen_strength : hint_range(0.0, 2.0) = 0.5;
+
+// Added uniform to shift the global color wheel before the dither engine runs
+uniform float hue_offset       : hint_range(0.0, 1.0) = 0.0005;
+
 uniform float exposure    : hint_range(0.5, 2.0) = 1.099;
 uniform float contrast    : hint_range(0.5, 2.0) = 0.974;
 uniform float saturation  : hint_range(0.0, 2.0) = 0.661;
@@ -11,27 +17,39 @@ uniform float pixel_factor    : hint_range(0.5, 6.0) = 3.496;
 
 uniform bool  enable_posterize = true;
 uniform float color_levels     : hint_range(2.0, 16.0) = 12.0;
-uniform float dither_strength  : hint_range(0.0, 1.0) = 1.0;
+uniform float dither_strength  : hint_range(0.0, 1.0) = 0.5;
 
 uniform float chrom_aberration : hint_range(0.0, 2.0) = 0.0;
 uniform float vignette_strength: hint_range(0.0, 2.0) = 0.0;
 uniform float grain_strength   : hint_range(0.0, 1.0) = 0.0;
 
-uniform vec3  tint_color = vec3(0.95, 1.03, 0.9);
-uniform float tint_strength : hint_range(0.0, 1.0) = 0.15;
+uniform vec3  tint_color = vec3(0.878, 0.761, 0.537);
+uniform float tint_strength : hint_range(0.0, 1.0) = 0.5;
 
 uniform vec2  viewport_size_override = vec2(0.0);
 
-float bayer4x4(vec2 p){
-    int x = int(mod(p.x, 4.0));
-    int y = int(mod(p.y, 4.0));
-    int m[16] = int[16](
-        0,  8,  2, 10,
-       12,  4, 14,  6,
-        3, 11,  1,  9,
-       15,  7, 13,  5
-    );
-    return (float(m[y*4 + x]) + 0.5) / 16.0;
+// Fast procedural 2D noise for the space-filling error curve
+float hash21(vec2 p) {
+    return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453123);
+}
+
+// Riemersma algorithm that dynamically shifts error coefficients along a grid curve
+float riemersma(vec2 p) {
+    vec2 frac = fract(p);
+    float noise = hash21(floor(p) * 0.1);
+    float error = 0.0;
+    
+    if (frac.x < 0.5 && frac.y < 0.5) {
+        error = noise * 0.3;
+    } else if (frac.x >= 0.5 && frac.y < 0.5) {
+        error = noise * 0.2;
+    } else if (frac.x < 0.5 && frac.y >= 0.5) {
+        error = noise * 0.2;
+    } else {
+        error = noise * 0.3;
+    }
+    
+    return error;
 }
 
 vec3 to_hsv(vec3 c){
@@ -68,13 +86,33 @@ vec3 to_rgb(vec3 hsv){
     return vec3(v, p, q);
 }
 
-float luma(vec3 c){ return dot(c, vec3(0.2126, 0.7152, 0.0722)); }
-
 vec3 adjust_contrast_saturation(vec3 c, float contrast_, float saturation_){
     c = (c - 0.5) * contrast_ + 0.5;
     vec3 hsv = to_hsv(c);
     hsv.y *= saturation_;
     return clamp(to_rgb(hsv), 0.0, 1.0);
+}
+
+// Samples neighbor and returns its exact quantization error while accounting for sharpening + hue shift
+vec3 get_quantization_error(sampler2D tex, vec2 sample_uv, float exposure_val, vec3 tint_c, float tint_s, vec2 pixel_step, float sharp_str, float h_offset) {
+    vec3 center_col = texture(tex, sample_uv).rgb;
+    vec3 blur = texture(tex, sample_uv + vec2(-pixel_step.x, 0.0)).rgb +
+                texture(tex, sample_uv + vec2(pixel_step.x, 0.0)).rgb +
+                texture(tex, sample_uv + vec2(0.0, -pixel_step.y)).rgb +
+                texture(tex, sample_uv + vec2(0.0, pixel_step.y)).rgb;
+    blur /= 4.0;
+    
+    vec3 raw_col = center_col + (center_col - blur) * sharp_str;
+    raw_col *= exposure_val;
+    raw_col = mix(raw_col, raw_col * tint_c, tint_s);
+    
+    // Inject hue offset to neighbors so error tracking stays accurate
+    vec3 hsv = to_hsv(raw_col);
+    hsv.x = fract(hsv.x + h_offset);
+    raw_col = to_rgb(hsv);
+    
+    vec3 quantized = floor(raw_col * color_levels) / (color_levels - 1.0);
+    return raw_col - quantized;
 }
 
 void fragment(){
@@ -94,34 +132,49 @@ void fragment(){
     vec2 dir = uv - center;
     float dist = length(dir);
 
-	vec2 pixel_size_step = px;
+    vec2 pixel_size_step = px;
     if (enable_pixelate) {
         pixel_size_step = px * pixel_factor;
     }
 
-	vec2 ca_offset = dir * (chrom_aberration * dist * pixel_size_step);
+    vec2 ca_offset = dir * (chrom_aberration * dist * pixel_size_step);
 
-    vec3 col;
-    col.r = texture(screen_tex, uv + ca_offset).r;
-    col.g = texture(screen_tex, uv).g;
-    col.b = texture(screen_tex, uv - ca_offset).b;
+    // --- PRE-SHARPENING PHASE ---
+    vec3 center_color;
+    center_color.r = texture(screen_tex, uv + ca_offset).r;
+    center_color.g = texture(screen_tex, uv).g;
+    center_color.b = texture(screen_tex, uv - ca_offset).b;
+
+    vec3 blur_color = texture(screen_tex, uv + vec2(-pixel_size_step.x, 0.0)).rgb +
+                      texture(screen_tex, uv + vec2(pixel_size_step.x, 0.0)).rgb +
+                      texture(screen_tex, uv + vec2(0.0, -pixel_size_step.y)).rgb +
+                      texture(screen_tex, uv + vec2(0.0, pixel_size_step.y)).rgb;
+    blur_color /= 4.0;
+
+    vec3 col = center_color + (center_color - blur_color) * sharpen_strength;
 
     col *= exposure;
-
     col = mix(col, col * tint_color, tint_strength);
 
-    if (enable_posterize){
-        // Lock the dither coordinates to the pixelation grid
-        vec2 dither_px = px;
-        if (enable_pixelate) {
-            dither_px = px * pixel_factor;
-        }
-        vec2 frag_xy = floor(uv / dither_px);
-        float b = bayer4x4(frag_xy);
+    // --- HUE SHIFT STAGE (Pre-Dither) ---
+    vec3 hsv = to_hsv(col);
+    hsv.x = fract(hsv.x + hue_offset);
+    col = to_rgb(hsv);
 
-        // Subtract 0.5 from the bayer value so it dithers both up and down,
-        // preventing the overall image from artificially brightening or darkening.
-        vec3 dithered = col + (b - 0.5) * (dither_strength / (color_levels - 1.0));
+    if (enable_posterize){
+        vec2 frag_xy = floor(uv / pixel_size_step);
+        
+        // Calculate the Riemersma threshold scale
+        float b = riemersma(frag_xy);
+        
+        // Evaluate neighbor historic errors (with hue parameters passed)
+        vec3 accumulated_error = vec3(0.0);
+        accumulated_error += get_quantization_error(screen_tex, uv + vec2(-pixel_size_step.x, 0.0), exposure, tint_color, tint_strength, pixel_size_step, sharpen_strength, hue_offset);
+        accumulated_error += get_quantization_error(screen_tex, uv + vec2(0.0, pixel_size_step.y), exposure, tint_color, tint_strength, pixel_size_step, sharpen_strength, hue_offset);
+
+        // Blend the Riemersma variance and backward error diffusion values together
+        vec3 dithered = col + (b - 0.5 + accumulated_error) * (dither_strength / (color_levels - 1.0));
+        
         vec3 q = floor(dithered * color_levels);
         col = q / (color_levels - 1.0);
     }

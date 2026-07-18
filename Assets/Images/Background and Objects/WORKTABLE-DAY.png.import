@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dba3dq62p4iqe"
-path="res://.godot/imported/BIKE MOTIONBLURRED.png-d2fc570994dd8ecc3254f972810d0c78.ctex"
+uid="uid://ru23ms38tr2i"
+path="res://.godot/imported/WORKTABLE-DAY.png-3ebb88315bc39a0aabc988373f25293f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Background and Objects/BIKE MOTIONBLURRED.png"
-dest_files=["res://.godot/imported/BIKE MOTIONBLURRED.png-d2fc570994dd8ecc3254f972810d0c78.ctex"]
+source_file="res://Assets/Images/Background and Objects/WORKTABLE-DAY.png"
+dest_files=["res://.godot/imported/WORKTABLE-DAY.png-3ebb88315bc39a0aabc988373f25293f.ctex"]
 
 [params]
 

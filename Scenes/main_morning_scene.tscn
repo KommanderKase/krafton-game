@@ -7,8 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://b6djlspdhga8s" path="res://Assets/Images/Background and Objects/WINDOWS ONLY.png" id="3_wjgmu"]
 [ext_resource type="Texture2D" uid="uid://d3emd3km388r4" path="res://Assets/Images/Background and Objects/WORKTABLE.png" id="4_31ni2"]
 [ext_resource type="AudioStream" uid="uid://b0yfujllcveyu" path="res://Assets/Audio/freesound_community-paper-fluttering-31132.mp3" id="5_lj11b"]
-[ext_resource type="PackedScene" uid="uid://b4xrecfga0b35" path="res://canvas_layer.tscn" id="8_x2xv4"]
-[ext_resource type="Shader" uid="uid://c7yfndqihqbs0" path="res://resources/Shader/main_dithered_shader.gdshader" id="9_w3wat"]
 
 [sub_resource type="Animation" id="Animation_gu4d3"]
 length = 0.001
@@ -136,23 +134,6 @@ _data = {
 &"new_animation": SubResource("Animation_wjgmu")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7txcg"]
-shader = ExtResource("9_w3wat")
-shader_parameter/exposure = 1.0990000284525
-shader_parameter/contrast = 0.974000022515
-shader_parameter/saturation = 0.6610000313975
-shader_parameter/enable_pixelate = true
-shader_parameter/pixel_factor = 3.49600014231
-shader_parameter/enable_posterize = true
-shader_parameter/color_levels = 12.0
-shader_parameter/dither_strength = 1.0
-shader_parameter/chrom_aberration = 0.0
-shader_parameter/vignette_strength = 0.0
-shader_parameter/grain_strength = 0.0
-shader_parameter/tint_color = Vector3(0.95, 1.03, 0.9)
-shader_parameter/tint_strength = 0.15
-shader_parameter/viewport_size_override = Vector2(0, 0)
-
 [node name="main morning scene" type="Node2D" unique_id=2058312407]
 script = ExtResource("1_qu4aq")
 
@@ -193,26 +174,3 @@ movie_quit_on_finish = true
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=126046995]
 position = Vector2(142, 343)
 stream = ExtResource("5_lj11b")
-
-[node name="CanvasLayer" parent="." unique_id=521103293 instance=ExtResource("8_x2xv4")]
-layer = 0
-visible = false
-
-[node name="ColorRect2" type="ColorRect" parent="CanvasLayer" unique_id=36084298]
-visible = false
-material = SubResource("ShaderMaterial_7txcg")
-anchors_preset = -1
-anchor_top = -0.063271604
-anchor_right = 1.0911459
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-mouse_filter = 2
-color = Color(1, 1, 1, 0)
-metadata/_edit_use_anchors_ = true
-
-[node name="DialogicLayer" type="CanvasLayer" parent="." unique_id=-360120044]
-layer = 10
-visible = false
