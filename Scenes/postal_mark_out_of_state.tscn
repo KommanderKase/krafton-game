@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://besyqpklkiwuo"]
+
+[ext_resource type="Script" uid="uid://ci75p1uwsraoo" path="res://postal_mark_out_of_state.gd" id="1_562da"]
+[ext_resource type="Texture2D" uid="uid://dot4jh0j2wgs" path="res://Assets/Images/Background and Objects/OUT OF STATE.png" id="2_y4hbq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2fs1"]
+size = Vector2(236, 244)
+
+[node name="postal_mark_out_of_state" type="Node2D" unique_id=1887513782]
+script = ExtResource("1_562da")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=949438441]
+texture = ExtResource("2_y4hbq")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1872578522]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2098017804]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_k2fs1")

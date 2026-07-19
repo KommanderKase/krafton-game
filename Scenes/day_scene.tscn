@@ -151,7 +151,7 @@ scale = Vector2(0.74734503, 0.69490737)
 texture = ExtResource("2_ck12u")
 
 [node name="MAILMAN OUTLINE" type="Sprite2D" parent="." unique_id=2119328655]
-position = Vector2(260, 298.83173)
+position = Vector2(263.99997, 298.83173)
 scale = Vector2(0.603125, 0.592281)
 texture = ExtResource("4_jjwb3")
 

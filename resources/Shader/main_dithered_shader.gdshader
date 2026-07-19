@@ -10,7 +10,7 @@ uniform float contrast    : hint_range(0.5, 2.0) = 0.9;
 uniform float saturation  : hint_range(0.0, 2.0) = 0.9;
 
 uniform bool enable_pixelate = true;
-uniform float pixel_factor    : hint_range(0.5, 6.0) = 3.5;
+uniform float pixel_factor    : hint_range(0.5, 6.0) = 1.0;
 
 uniform bool  enable_posterize = true;
 uniform float color_levels     : hint_range(2.0, 16.0) = 12.0;
@@ -21,7 +21,7 @@ uniform float vignette_strength: hint_range(0.0, 2.0) = 0.5;
 uniform float grain_strength   : hint_range(0.0, 1.0) = 0.5;
 
 uniform vec3  tint_color = vec3(0.761, 0.745, 0.655);
-uniform float tint_strength : hint_range(0.0, 1.0) = 0.5;
+uniform float tint_strength : hint_range(0.0, 1.0) = 0.2;
 
 uniform vec2  viewport_size_override = vec2(0.0);
 

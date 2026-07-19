@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cdfy817jq6v7i"]
+
+[ext_resource type="Texture2D" uid="uid://dab7wwx8puxos" path="res://Assets/Images/Background and Objects/REJECTED STAMP.png" id="1_r771w"]
+[ext_resource type="Script" uid="uid://dw8bxgtkpuwx" path="res://Scripts/postal_mark_rejected.gd" id="1_rsotd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2fs1"]
+size = Vector2(236, 244)
+
+[node name="postal_mark_rejected" type="Node2D" unique_id=1887513782]
+script = ExtResource("1_rsotd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=949438441]
+texture = ExtResource("1_r771w")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1872578522]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2098017804]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_k2fs1")

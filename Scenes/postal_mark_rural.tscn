@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://blre0rnbgukdn"]
+
+[ext_resource type="Script" uid="uid://coafiuiafbxen" path="res://postal_mark_rural.gd" id="1_7kuy0"]
+[ext_resource type="Texture2D" uid="uid://crdlftpj0svwj" path="res://Assets/Images/Background and Objects/RURAL ROUTE.png" id="2_712d2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2fs1"]
+size = Vector2(236, 244)
+
+[node name="postal_mark_rural" type="Node2D" unique_id=1887513782]
+script = ExtResource("1_7kuy0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=949438441]
+texture = ExtResource("2_712d2")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1872578522]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2098017804]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_k2fs1")

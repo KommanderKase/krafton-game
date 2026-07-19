@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 Dialogic="*uid://ds2q0uclmolvu"
+GameManager="*uid://cquobjx1vk60"
+LetterManager="*uid://hgki40dqg80w"
 
 [dialogic]
 

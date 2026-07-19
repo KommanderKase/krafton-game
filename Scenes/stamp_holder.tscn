@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://uapbgn1cqvmd"]
+
+[ext_resource type="Texture2D" uid="uid://c44s0de1tjxf" path="res://Assets/Images/Background and Objects/STAMP HOLDER.png" id="1_5bwkp"]
+
+[node name="Node2D" type="Node2D" unique_id=1393086259]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1979560870]
+texture = ExtResource("1_5bwkp")

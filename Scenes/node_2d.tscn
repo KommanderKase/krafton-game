@@ -21,20 +21,18 @@ scale = Vector2(0.36291665, 0.36291665)
 texture = ExtResource("2_0hol4")
 
 [node name="Label" type="Label" parent="Sprite2D" unique_id=2147380506]
-anchors_preset = -1
-anchor_left = 0.317
-anchor_top = 0.652
-anchor_right = 0.582
-anchor_bottom = 0.83900005
-offset_left = -399.63904
-offset_top = -300.27002
-offset_right = -400.26288
-offset_bottom = -300.17636
-text = "Address
-From:
-To:"
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -294.83353
+offset_top = -261.42365
+offset_right = -124.833466
+offset_bottom = -153.42363
+grow_vertical = 2
+text = "195 Gumbo, IO
+From: Michael
+To: George"
 label_settings = SubResource("LabelSettings_0e48y")
-metadata/_edit_use_anchors_ = true
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1878004267]
 
@@ -42,3 +40,14 @@ metadata/_edit_use_anchors_ = true
 z_index = 9
 position = Vector2(0, -1.25)
 shape = SubResource("RectangleShape2D_cwk65")
+
+[node name="stampsocket" type="Node2D" parent="." unique_id=530477985]
+position = Vector2(68, -52)
+
+[node name="Sprite2D" type="Sprite2D" parent="stampsocket" unique_id=2006376764]
+scale = Vector2(0.2, 0.3)
+
+[node name="postmarksocket" type="Node2D" parent="." unique_id=1347739090]
+position = Vector2(26, -52)
+
+[node name="Sprite2D" type="Sprite2D" parent="postmarksocket" unique_id=1580365563]

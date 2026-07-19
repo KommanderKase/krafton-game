@@ -8,6 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://dtapamlbvbujq" path="res://Assets/Images/Characters/MAILMAN SHADOW.png" id="4_wuias"]
 [ext_resource type="AudioStream" uid="uid://b0yfujllcveyu" path="res://Assets/Audio/freesound_community-paper-fluttering-31132.mp3" id="5_lj11b"]
 [ext_resource type="Texture2D" uid="uid://c23n7jixmuvfn" path="res://Assets/Images/Characters/MAILMAN-BLUEST.png" id="5_wuias"]
+[ext_resource type="PackedScene" uid="uid://uapbgn1cqvmd" path="res://Scenes/stamp_holder.tscn" id="9_8o72r"]
+[ext_resource type="PackedScene" uid="uid://cdfy817jq6v7i" path="res://Scenes/postal_mark_rejected.tscn" id="10_kxwvp"]
+[ext_resource type="PackedScene" uid="uid://blre0rnbgukdn" path="res://Scenes/postal_mark_rural.tscn" id="11_0di5u"]
+[ext_resource type="PackedScene" uid="uid://besyqpklkiwuo" path="res://Scenes/postal_mark_out_of_state.tscn" id="12_7ulc5"]
 
 [sub_resource type="Animation" id="Animation_gu4d3"]
 length = 0.001
@@ -150,7 +154,7 @@ scale = Vector2(0.74734503, 0.69490737)
 texture = ExtResource("3_wjgmu")
 
 [node name="MAILMAN OUTLINE" type="Sprite2D" parent="." unique_id=1104328604]
-position = Vector2(250, 343.00003)
+position = Vector2(255, 343.00003)
 scale = Vector2(0.603125, 0.592281)
 texture = ExtResource("4_wuias")
 
@@ -162,7 +166,7 @@ texture = ExtResource("5_wuias")
 
 [node name="TABLE" type="Sprite2D" parent="." unique_id=2124660757]
 texture_filter = 1
-position = Vector2(586, -59)
+position = Vector2(588.99994, -56)
 scale = Vector2(0.6230649, 1.3148896)
 texture = ExtResource("4_31ni2")
 
@@ -180,3 +184,19 @@ movie_quit_on_finish = true
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=126046995]
 position = Vector2(142, 343)
 stream = ExtResource("5_lj11b")
+
+[node name="Node2D" parent="." unique_id=1393086259 instance=ExtResource("9_8o72r")]
+position = Vector2(966, 479)
+scale = Vector2(0.32, 0.32)
+
+[node name="postal_mark_rejected" parent="." unique_id=1887513782 instance=ExtResource("10_kxwvp")]
+position = Vector2(1092, 378)
+scale = Vector2(0.32, 0.32)
+
+[node name="postal_mark_rural" parent="." unique_id=1041075206 instance=ExtResource("11_0di5u")]
+position = Vector2(874.99994, 378)
+scale = Vector2(0.32, 0.32)
+
+[node name="postal_mark_out_of_state" parent="." unique_id=535752477 instance=ExtResource("12_7ulc5")]
+position = Vector2(982.99994, 433.99997)
+scale = Vector2(0.32000002, 0.32000002)
