@@ -23,13 +23,12 @@ label drag it
 mailman: Try dragging it around, get a feel for it \
 (Hold Left Click and drag)
 [wait time="3.0" skippable="true"]
-if {letter_moved} == 2.0:
-	jump dragged
-else:
-	jump drag it
-label dragged
 mailman: good.. good..
 mailman: now you should try stamping it\
 (Press Right Click on the letter to stamp)
 if {letter_stamped} == 2.0:
 	mailman: Alright
+mailman: Then you can learn the rest by yourself. Check the drawers, there's an official manual that you gotta read.
+- Okay.
+mailman: I gotta go deliever more packages. You'll get the jist of it.
+- Thanks.

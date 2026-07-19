@@ -8,8 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://fec7yl2xp7xn" path="res://Assets/Images/Evening/eveninglamp.png" id="4_bw72o"]
 [ext_resource type="Texture2D" uid="uid://dbgl6imhircbg" path="res://Assets/Images/Background and Objects/CARDBOARD.png" id="6_tnyoi"]
 [ext_resource type="Theme" uid="uid://1casi3s2t3el" path="res://resources/button.tres" id="7_j6hv6"]
-
-[sub_resource type="GDScript" id="GDScript_kaohw"]
+[ext_resource type="Script" uid="uid://c018eoufnxcj3" path="res://Scenes/cardboard_box.gd" id="8_tnyoi"]
 
 [node name="EveningScene" type="Node2D" unique_id=542977085]
 script = ExtResource("1_kaohw")
@@ -40,7 +39,7 @@ texture = ExtResource("4_bw72o")
 position = Vector2(581.00006, 326)
 scale = Vector2(0.6018518, 0.6018519)
 texture = ExtResource("6_tnyoi")
-script = SubResource("GDScript_kaohw")
+script = ExtResource("8_tnyoi")
 
 [node name="DropZone" type="ReferenceRect" parent="." unique_id=757820317]
 offset_left = -3.0
@@ -56,15 +55,6 @@ offset_right = 1092.0
 offset_bottom = 127.0
 theme = ExtResource("7_j6hv6")
 text = "SPAWN PACKAGE"
-alignment = 0
-
-[node name="SpawnButton2" type="Button" parent="." unique_id=549922985]
-offset_left = 847.0
-offset_top = 139.0
-offset_right = 1092.0
-offset_bottom = 202.0
-theme = ExtResource("7_j6hv6")
-text = "SPAWN PACKAGES"
 alignment = 0
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=1750795991]

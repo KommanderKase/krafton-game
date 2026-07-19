@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2bqjptcqj0fj"
-path="res://.godot/imported/GREENCAR MOTIONBLURRED.png-8c478377892a3efe5253ebd7976248a9.ctex"
+uid="uid://c13gff6yl4qhe"
+path="res://.godot/imported/BROWNCAR MOTIONBLURRED.png-69da5c8a82a2c943233f58ed6de23618.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Background and Objects/Background Vehicles/GREENCAR MOTIONBLURRED.png"
-dest_files=["res://.godot/imported/GREENCAR MOTIONBLURRED.png-8c478377892a3efe5253ebd7976248a9.ctex"]
+source_file="res://Assets/Images/Background and Objects/Vehicles/BROWNCAR MOTIONBLURRED.png"
+dest_files=["res://.godot/imported/BROWNCAR MOTIONBLURRED.png-69da5c8a82a2c943233f58ed6de23618.ctex"]
 
 [params]
 

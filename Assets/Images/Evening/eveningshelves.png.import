@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://smbvmnytdm6r"
-path="res://.godot/imported/GREYCAR MOTIONBLURRED.png-c8e4a930e633e7b53b120a423a1687a8.ctex"
+uid="uid://cbcynmuj0lp8o"
+path="res://.godot/imported/eveningshelves.png-d5d26b3d1f099b93adcd27adfa53cf95.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Background and Objects/Background Vehicles/GREYCAR MOTIONBLURRED.png"
-dest_files=["res://.godot/imported/GREYCAR MOTIONBLURRED.png-c8e4a930e633e7b53b120a423a1687a8.ctex"]
+source_file="res://Assets/Images/Evening/eveningshelves.png"
+dest_files=["res://.godot/imported/eveningshelves.png-d5d26b3d1f099b93adcd27adfa53cf95.ctex"]
 
 [params]
 

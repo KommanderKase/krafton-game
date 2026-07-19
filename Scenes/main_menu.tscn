@@ -45,9 +45,40 @@ theme = ExtResource("2_7gogf")
 text = "QUIT"
 alignment = 0
 
+[node name="MorningDebugButton" type="Button" parent="Button_manager" unique_id=1550258989]
+layout_mode = 0
+offset_left = 283.0
+offset_top = 249.0
+offset_right = 528.0
+offset_bottom = 312.0
+theme = ExtResource("2_7gogf")
+text = "MORNING (DEBUG)"
+alignment = 0
+
+[node name="DayDebugButton" type="Button" parent="Button_manager" unique_id=1067314318]
+layout_mode = 0
+offset_left = 283.0
+offset_top = 333.0
+offset_right = 528.0
+offset_bottom = 396.0
+theme = ExtResource("2_7gogf")
+text = "DAY (DEBUG)"
+alignment = 0
+
+[node name="EveningDebugButton" type="Button" parent="Button_manager" unique_id=516502910]
+layout_mode = 0
+offset_left = 283.0
+offset_top = 414.0
+offset_right = 528.0
+offset_bottom = 477.0
+theme = ExtResource("2_7gogf")
+text = "EVENING (DEBUG)"
+alignment = 0
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1198125757]
 stream = ExtResource("3_fu7sn")
 autoplay = true
 
 [connection signal="pressed" from="Button_manager/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Button_manager/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Button_manager/EveningDebugButton" to="." method="_on_evening_debug_button_pressed"]

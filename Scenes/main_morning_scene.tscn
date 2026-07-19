@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://cyu30tvei0y6s" path="res://Assets/Images/Background and Objects/MORNING SKY AND BUILDINGS.png" id="2_31ni2"]
 [ext_resource type="PackedScene" uid="uid://bnq56is3fuyv8" path="res://Scenes/node_2d.tscn" id="3_uwo4r"]
 [ext_resource type="Texture2D" uid="uid://b6djlspdhga8s" path="res://Assets/Images/Background and Objects/WINDOWS ONLY.png" id="3_wjgmu"]
-[ext_resource type="Texture2D" uid="uid://d3emd3km388r4" path="res://Assets/Images/Background and Objects/WORKTABLE.png" id="4_31ni2"]
 [ext_resource type="Texture2D" uid="uid://dtapamlbvbujq" path="res://Assets/Images/Characters/MAILMAN SHADOW.png" id="4_wuias"]
 [ext_resource type="AudioStream" uid="uid://b0yfujllcveyu" path="res://Assets/Audio/freesound_community-paper-fluttering-31132.mp3" id="5_lj11b"]
 [ext_resource type="Texture2D" uid="uid://c23n7jixmuvfn" path="res://Assets/Images/Characters/MAILMAN-BLUEST.png" id="5_wuias"]
@@ -12,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cdfy817jq6v7i" path="res://Scenes/postal_mark_rejected.tscn" id="10_kxwvp"]
 [ext_resource type="PackedScene" uid="uid://blre0rnbgukdn" path="res://Scenes/postal_mark_rural.tscn" id="11_0di5u"]
 [ext_resource type="PackedScene" uid="uid://besyqpklkiwuo" path="res://Scenes/postal_mark_out_of_state.tscn" id="12_7ulc5"]
+[ext_resource type="Texture2D" uid="uid://bcw0vfdraen18" path="res://Assets/Images/Day/worktable.png" id="12_8o72r"]
 
 [sub_resource type="Animation" id="Animation_gu4d3"]
 length = 0.001
@@ -143,32 +143,26 @@ _data = {
 script = ExtResource("1_qu4aq")
 
 [node name="SKY" type="Sprite2D" parent="." unique_id=1497674278]
-position = Vector2(570.00006, 216.00002)
-scale = Vector2(0.7712963, 0.7712963)
+position = Vector2(577.9445, 326.5)
+scale = Vector2(0.6000579, 0.60092586)
 texture = ExtResource("2_31ni2")
 
 [node name="BACKGROUND" type="Sprite2D" parent="." unique_id=2031870099]
 texture_filter = 1
-position = Vector2(560, 354)
-scale = Vector2(0.74734503, 0.69490737)
+position = Vector2(574.2235, 323.00003)
+scale = Vector2(0.6008088, 0.59814817)
 texture = ExtResource("3_wjgmu")
 
 [node name="MAILMAN OUTLINE" type="Sprite2D" parent="." unique_id=1104328604]
-position = Vector2(255, 343.00003)
+position = Vector2(271, 316.83173)
 scale = Vector2(0.603125, 0.592281)
 texture = ExtResource("4_wuias")
 
 [node name="MAILMAN" type="Sprite2D" parent="." unique_id=1138173405]
 texture_filter = 1
-position = Vector2(250, 343)
+position = Vector2(266, 316.8317)
 scale = Vector2(0.5608269, 0.56082684)
 texture = ExtResource("5_wuias")
-
-[node name="TABLE" type="Sprite2D" parent="." unique_id=2124660757]
-texture_filter = 1
-position = Vector2(588.99994, -56)
-scale = Vector2(0.6230649, 1.3148896)
-texture = ExtResource("4_31ni2")
 
 [node name="letters" parent="." unique_id=1833086408 instance=ExtResource("3_uwo4r")]
 z_index = 6
@@ -200,3 +194,8 @@ scale = Vector2(0.32, 0.32)
 [node name="postal_mark_out_of_state" parent="." unique_id=535752477 instance=ExtResource("12_7ulc5")]
 position = Vector2(982.99994, 433.99997)
 scale = Vector2(0.32000002, 0.32000002)
+
+[node name="Worktable" type="Sprite2D" parent="." unique_id=1989889822]
+position = Vector2(575, 572.5625)
+scale = Vector2(0.6020834, 0.6020834)
+texture = ExtResource("12_8o72r")

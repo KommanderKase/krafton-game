@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://bjqmvo4433wfn"]
 
 [ext_resource type="Script" uid="uid://3ajufksunddq" path="res://Scripts/day_scene.gd" id="1_7vt43"]
-[ext_resource type="Texture2D" uid="uid://cyu30tvei0y6s" path="res://Assets/Images/Background and Objects/MORNING SKY AND BUILDINGS.png" id="1_jjwb3"]
-[ext_resource type="Texture2D" uid="uid://b6djlspdhga8s" path="res://Assets/Images/Background and Objects/WINDOWS ONLY.png" id="2_ck12u"]
-[ext_resource type="Texture2D" uid="uid://ru23ms38tr2i" path="res://Assets/Images/Background and Objects/WORKTABLE-DAY.png" id="4_ck12u"]
+[ext_resource type="Texture2D" uid="uid://b5506ndjh18qs" path="res://Assets/Images/Day/daybackground-skyandbuildings.png" id="4_ck12u"]
 [ext_resource type="Texture2D" uid="uid://dtapamlbvbujq" path="res://Assets/Images/Characters/MAILMAN SHADOW.png" id="4_jjwb3"]
 [ext_resource type="Texture2D" uid="uid://dbgl6imhircbg" path="res://Assets/Images/Background and Objects/CARDBOARD.png" id="5_7vt43"]
 [ext_resource type="Texture2D" uid="uid://c23n7jixmuvfn" path="res://Assets/Images/Characters/MAILMAN-BLUEST.png" id="5_ck12u"]
 [ext_resource type="PackedScene" uid="uid://bnq56is3fuyv8" path="res://Scenes/node_2d.tscn" id="5_jxcnm"]
+[ext_resource type="Texture2D" uid="uid://c7pale3odw310" path="res://Assets/Images/Day/daybackground-wallandwindows.png" id="5_le5y8"]
 [ext_resource type="AudioStream" uid="uid://b0yfujllcveyu" path="res://Assets/Audio/freesound_community-paper-fluttering-31132.mp3" id="6_07qo7"]
+[ext_resource type="Texture2D" uid="uid://bcw0vfdraen18" path="res://Assets/Images/Day/worktable.png" id="8_jxcnm"]
 
 [sub_resource type="Animation" id="Animation_gu4d3"]
 length = 0.001
@@ -139,39 +139,6 @@ _data = {
 [node name="day scene" type="Node2D" unique_id=541089571]
 script = ExtResource("1_7vt43")
 
-[node name="SKY" type="Sprite2D" parent="." unique_id=1122869075]
-position = Vector2(570.00006, 216.00002)
-scale = Vector2(0.7712963, 0.7712963)
-texture = ExtResource("1_jjwb3")
-
-[node name="BACKGROUND" type="Sprite2D" parent="." unique_id=218239068]
-texture_filter = 1
-position = Vector2(560, 354)
-scale = Vector2(0.74734503, 0.69490737)
-texture = ExtResource("2_ck12u")
-
-[node name="MAILMAN OUTLINE" type="Sprite2D" parent="." unique_id=2119328655]
-position = Vector2(263.99997, 298.83173)
-scale = Vector2(0.603125, 0.592281)
-texture = ExtResource("4_jjwb3")
-
-[node name="MAILMAN" type="Sprite2D" parent="." unique_id=638741522]
-texture_filter = 1
-position = Vector2(260, 298.8317)
-scale = Vector2(0.5608269, 0.56082684)
-texture = ExtResource("5_ck12u")
-
-[node name="TABLE" type="Sprite2D" parent="." unique_id=475664975]
-texture_filter = 1
-position = Vector2(570.99994, 101.999985)
-scale = Vector2(0.6230649, 1.3148896)
-texture = ExtResource("4_ck12u")
-
-[node name="BOX" type="Sprite2D" parent="." unique_id=69184070]
-position = Vector2(866, 438)
-scale = Vector2(0.6018518, 0.6018519)
-texture = ExtResource("5_7vt43")
-
 [node name="letters" parent="." unique_id=1833086408 instance=ExtResource("5_jxcnm")]
 z_index = 6
 position = Vector2(292, 609)
@@ -186,3 +153,34 @@ movie_quit_on_finish = true
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1978227331]
 position = Vector2(142, 343)
 stream = ExtResource("6_07qo7")
+
+[node name="DaybackgroundSkyandbuildings" type="Sprite2D" parent="." unique_id=712088752]
+position = Vector2(685.00006, 324.25)
+scale = Vector2(0.5995371, 0.5995371)
+texture = ExtResource("4_ck12u")
+
+[node name="DaybackgroundWallandwindows" type="Sprite2D" parent="." unique_id=1186950529]
+position = Vector2(575.44446, 324.5)
+scale = Vector2(0.599074, 0.599074)
+texture = ExtResource("5_le5y8")
+
+[node name="MAILMAN OUTLINE" type="Sprite2D" parent="." unique_id=2119328655]
+position = Vector2(216, 169)
+scale = Vector2(0.4041667, 0.4037037)
+texture = ExtResource("4_jjwb3")
+
+[node name="MAILMAN" type="Sprite2D" parent="." unique_id=638741522]
+texture_filter = 1
+position = Vector2(216, 169)
+scale = Vector2(0.38333678, 0.38333678)
+texture = ExtResource("5_ck12u")
+
+[node name="Worktable" type="Sprite2D" parent="." unique_id=94558783]
+position = Vector2(578.00006, 323.00003)
+scale = Vector2(0.6007523, 0.6007523)
+texture = ExtResource("8_jxcnm")
+
+[node name="BOX" type="Sprite2D" parent="." unique_id=69184070]
+position = Vector2(589, 325)
+scale = Vector2(0.6018518, 0.6018519)
+texture = ExtResource("5_7vt43")
