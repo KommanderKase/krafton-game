@@ -2,11 +2,47 @@
 
 [ext_resource type="Script" uid="uid://vaqyq0u41obc" path="res://Scripts/main_menu.gd" id="1_dy5lf"]
 [ext_resource type="Theme" uid="uid://1casi3s2t3el" path="res://resources/button.tres" id="2_7gogf"]
+[ext_resource type="Texture2D" uid="uid://b5506ndjh18qs" path="res://Assets/Images/Day/daybackground-skyandbuildings.png" id="2_t1dhk"]
+[ext_resource type="Script" uid="uid://c8be06e6iowpc" path="res://Scenes/traffic.gd" id="3_5egv6"]
 [ext_resource type="AudioStream" uid="uid://dvuqgqotc4r8t" path="res://Assets/Audio/maintheme.mp3(1).mp3" id="3_fu7sn"]
 [ext_resource type="Script" uid="uid://c0p0l8titvk8q" path="res://Scripts/start.gd" id="3_jix8l"]
+[ext_resource type="Texture2D" uid="uid://dba3dq62p4iqe" path="res://Assets/Images/Background and Objects/Vehicles/BIKE MOTIONBLURRED.png" id="4_vtepg"]
+[ext_resource type="Texture2D" uid="uid://c13gff6yl4qhe" path="res://Assets/Images/Background and Objects/Vehicles/BROWNCAR MOTIONBLURRED.png" id="5_8dnnj"]
+[ext_resource type="Texture2D" uid="uid://bfsqf7jumrqrb" path="res://Assets/Images/TRANSITION.png" id="5_n45e2"]
+[ext_resource type="Texture2D" uid="uid://2bqjptcqj0fj" path="res://Assets/Images/Background and Objects/Vehicles/GREENCAR MOTIONBLURRED.png" id="6_m3bi6"]
+[ext_resource type="Texture2D" uid="uid://smbvmnytdm6r" path="res://Assets/Images/Background and Objects/Vehicles/GREYCAR MOTIONBLURRED.png" id="7_wyh8j"]
+[ext_resource type="Texture2D" uid="uid://i15qivmw8tmb" path="res://Assets/Images/1093 logo.png" id="12_ujyyl"]
 
 [node name="Main Menu" type="Node2D" unique_id=1883568903]
 script = ExtResource("1_dy5lf")
+
+[node name="DaybackgroundSkyandbuildings" type="Sprite2D" parent="." unique_id=151287662]
+position = Vector2(592, 343.00003)
+scale = Vector2(0.9064236, 0.90642357)
+texture = ExtResource("2_t1dhk")
+
+[node name="Traffic" type="Node2D" parent="." unique_id=1563014131]
+script = ExtResource("3_5egv6")
+
+[node name="Bicycle" type="Sprite2D" parent="Traffic" unique_id=1475418227]
+position = Vector2(397, 305.565)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("4_vtepg")
+
+[node name="Car1" type="Sprite2D" parent="Traffic" unique_id=1122151160]
+position = Vector2(397, 305.565)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("5_8dnnj")
+
+[node name="Car2" type="Sprite2D" parent="Traffic" unique_id=327976267]
+position = Vector2(397, 305.565)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("6_m3bi6")
+
+[node name="Car3" type="Sprite2D" parent="Traffic" unique_id=1328549130]
+position = Vector2(397, 305.565)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("7_wyh8j")
 
 [node name="Button_manager" type="Control" parent="." unique_id=824363428]
 layout_mode = 3
@@ -48,9 +84,9 @@ alignment = 0
 [node name="MorningDebugButton" type="Button" parent="Button_manager" unique_id=1550258989]
 layout_mode = 0
 offset_left = 283.0
-offset_top = 249.0
+offset_top = 168.0
 offset_right = 528.0
-offset_bottom = 312.0
+offset_bottom = 231.0
 theme = ExtResource("2_7gogf")
 text = "MORNING (DEBUG)"
 alignment = 0
@@ -58,9 +94,9 @@ alignment = 0
 [node name="DayDebugButton" type="Button" parent="Button_manager" unique_id=1067314318]
 layout_mode = 0
 offset_left = 283.0
-offset_top = 333.0
+offset_top = 252.0
 offset_right = 528.0
-offset_bottom = 396.0
+offset_bottom = 315.0
 theme = ExtResource("2_7gogf")
 text = "DAY (DEBUG)"
 alignment = 0
@@ -68,9 +104,9 @@ alignment = 0
 [node name="EveningDebugButton" type="Button" parent="Button_manager" unique_id=516502910]
 layout_mode = 0
 offset_left = 283.0
-offset_top = 414.0
+offset_top = 333.0
 offset_right = 528.0
-offset_bottom = 477.0
+offset_bottom = 396.0
 theme = ExtResource("2_7gogf")
 text = "EVENING (DEBUG)"
 alignment = 0
@@ -79,6 +115,18 @@ alignment = 0
 stream = ExtResource("3_fu7sn")
 autoplay = true
 
+[node name="Transition" type="Sprite2D" parent="." unique_id=672639473]
+visible = false
+position = Vector2(581, 327)
+scale = Vector2(0.37400797, 0.6238426)
+texture = ExtResource("5_n45e2")
+
+[node name="1093Logo" type="Sprite2D" parent="." unique_id=1407812560]
+position = Vector2(916.99994, 394)
+scale = Vector2(0.76203704, 0.76203704)
+texture = ExtResource("12_ujyyl")
+
 [connection signal="pressed" from="Button_manager/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Button_manager/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Button_manager/DayDebugButton" to="." method="_on_day_debug_button_pressed"]
 [connection signal="pressed" from="Button_manager/EveningDebugButton" to="." method="_on_evening_debug_button_pressed"]
