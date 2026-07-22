@@ -7,8 +7,17 @@
 [ext_resource type="Texture2D" uid="uid://c23n7jixmuvfn" path="res://Assets/Images/Characters/MAILMAN-BLUEST.png" id="5_ck12u"]
 [ext_resource type="PackedScene" uid="uid://bnq56is3fuyv8" path="res://Scenes/node_2d.tscn" id="5_jxcnm"]
 [ext_resource type="Texture2D" uid="uid://c7pale3odw310" path="res://Assets/Images/Day/daybackground-wallandwindows.png" id="5_le5y8"]
+[ext_resource type="Script" uid="uid://c8be06e6iowpc" path="res://Scenes/traffic.gd" id="5_qbhtl"]
 [ext_resource type="AudioStream" uid="uid://b0yfujllcveyu" path="res://Assets/Audio/freesound_community-paper-fluttering-31132.mp3" id="6_07qo7"]
+[ext_resource type="Texture2D" uid="uid://dba3dq62p4iqe" path="res://Assets/Images/Background and Objects/Vehicles/BIKE MOTIONBLURRED.png" id="6_sqoqm"]
+[ext_resource type="Texture2D" uid="uid://c13gff6yl4qhe" path="res://Assets/Images/Background and Objects/Vehicles/BROWNCAR MOTIONBLURRED.png" id="7_nuf0u"]
+[ext_resource type="Texture2D" uid="uid://2bqjptcqj0fj" path="res://Assets/Images/Background and Objects/Vehicles/GREENCAR MOTIONBLURRED.png" id="8_8vc6g"]
 [ext_resource type="Texture2D" uid="uid://bcw0vfdraen18" path="res://Assets/Images/Day/worktable.png" id="8_jxcnm"]
+[ext_resource type="Script" uid="uid://4rgyhaotectc" path="res://Scenes/cardboards.gd" id="9_jxcnm"]
+[ext_resource type="Texture2D" uid="uid://smbvmnytdm6r" path="res://Assets/Images/Background and Objects/Vehicles/GREYCAR MOTIONBLURRED.png" id="9_t122b"]
+[ext_resource type="Script" uid="uid://5228sqb0n1fa" path="res://Scenes/drawers.gd" id="10_le5y8"]
+[ext_resource type="Texture2D" uid="uid://c758nn74dx6nb" path="res://Assets/Images/Day/drawers.png" id="11_jxcnm"]
+[ext_resource type="Script" uid="uid://cjgjhenoflj8h" path="res://Scenes/drag_manager.gd" id="18_sqoqm"]
 
 [sub_resource type="Animation" id="Animation_gu4d3"]
 length = 0.001
@@ -136,7 +145,16 @@ _data = {
 &"new_animation": SubResource("Animation_wjgmu")
 }
 
-[node name="day scene" type="Node2D" unique_id=541089571]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fp1n2"]
+size = Vector2(59.81543, 508.4309)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6jhai"]
+size = Vector2(144, 61)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7sxda"]
+size = Vector2(68.13119, 14.455444)
+
+[node name="Day" type="Node2D" unique_id=541089571]
 script = ExtResource("1_7vt43")
 
 [node name="letters" parent="." unique_id=1833086408 instance=ExtResource("5_jxcnm")]
@@ -159,6 +177,29 @@ position = Vector2(685.00006, 324.25)
 scale = Vector2(0.5995371, 0.5995371)
 texture = ExtResource("4_ck12u")
 
+[node name="Traffic" type="Node2D" parent="." unique_id=383003750]
+script = ExtResource("5_qbhtl")
+
+[node name="Bicycle" type="Sprite2D" parent="Traffic" unique_id=1726864366]
+position = Vector2(397, 305.565)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("6_sqoqm")
+
+[node name="Car1" type="Sprite2D" parent="Traffic" unique_id=605977121]
+position = Vector2(397, 305.565)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("7_nuf0u")
+
+[node name="Car2" type="Sprite2D" parent="Traffic" unique_id=1720150790]
+position = Vector2(397, 305.565)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("8_8vc6g")
+
+[node name="Car3" type="Sprite2D" parent="Traffic" unique_id=1475580513]
+position = Vector2(397, 305.565)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("9_t122b")
+
 [node name="DaybackgroundWallandwindows" type="Sprite2D" parent="." unique_id=1186950529]
 position = Vector2(575.44446, 324.5)
 scale = Vector2(0.599074, 0.599074)
@@ -180,7 +221,86 @@ position = Vector2(578.00006, 323.00003)
 scale = Vector2(0.6007523, 0.6007523)
 texture = ExtResource("8_jxcnm")
 
-[node name="BOX" type="Sprite2D" parent="." unique_id=69184070]
+[node name="Cardboards" type="Node2D" parent="." unique_id=859459645]
 position = Vector2(589, 325)
 scale = Vector2(0.6018518, 0.6018519)
+script = ExtResource("9_jxcnm")
+slide_direction = 0
+
+[node name="Cardboard1" type="Node2D" parent="Cardboards" unique_id=777873253]
+position = Vector2(697.8461, 0)
+
+[node name="BaseTexture" type="Sprite2D" parent="Cardboards/Cardboard1" unique_id=69184070]
+scale = Vector2(0.9999999, 1)
 texture = ExtResource("5_7vt43")
+
+[node name="Handle" type="Area2D" parent="Cardboards/Cardboard1" unique_id=557624649]
+position = Vector2(206.03073, 277.47687)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cardboards/Cardboard1/Handle" unique_id=1279654475]
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_fp1n2")
+
+[node name="Drawers" type="Node2D" parent="." unique_id=1515442827]
+script = ExtResource("10_le5y8")
+
+[node name="Drawer1" type="Node2D" parent="Drawers" unique_id=2126914481]
+
+[node name="BaseTexture" type="Sprite2D" parent="Drawers/Drawer1" unique_id=1811084352]
+position = Vector2(221, 669)
+scale = Vector2(0.59907407, 0.59907407)
+texture = ExtResource("11_jxcnm")
+
+[node name="Handle" type="Area2D" parent="Drawers/Drawer1" unique_id=677415396]
+position = Vector2(75, 596)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawers/Drawer1/Handle" unique_id=790961374]
+position = Vector2(0, 20.5)
+shape = SubResource("RectangleShape2D_6jhai")
+
+[node name="Content" type="Sprite2D" parent="Drawers/Drawer1" unique_id=2015242034]
+
+[node name="Drawer2" type="Node2D" parent="Drawers" unique_id=201371426]
+
+[node name="BaseTexture" type="Sprite2D" parent="Drawers/Drawer2" unique_id=1469753280]
+position = Vector2(371.11108, 669)
+scale = Vector2(0.59907407, 0.59907407)
+texture = ExtResource("11_jxcnm")
+
+[node name="Handle" type="Area2D" parent="Drawers/Drawer2" unique_id=981088820]
+position = Vector2(225.11108, 596)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawers/Drawer2/Handle" unique_id=1321790650]
+position = Vector2(0, 20.5)
+shape = SubResource("RectangleShape2D_6jhai")
+
+[node name="Content" type="Sprite2D" parent="Drawers/Drawer2" unique_id=303855226]
+position = Vector2(150.11108, 0)
+
+[node name="Drawer3" type="Node2D" parent="Drawers" unique_id=1177111644]
+
+[node name="BaseTexture" type="Sprite2D" parent="Drawers/Drawer3" unique_id=1877140553]
+position = Vector2(521.1111, 669)
+scale = Vector2(0.59907407, 0.59907407)
+texture = ExtResource("11_jxcnm")
+
+[node name="Handle" type="Area2D" parent="Drawers/Drawer3" unique_id=1223914573]
+position = Vector2(375.11108, 596)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawers/Drawer3/Handle" unique_id=196428960]
+position = Vector2(0, 20.5)
+shape = SubResource("RectangleShape2D_6jhai")
+
+[node name="Content" type="Sprite2D" parent="Drawers/Drawer3" unique_id=609362547]
+position = Vector2(300.11108, 0)
+
+[node name="DragManager" type="Node2D" parent="." unique_id=1622864244]
+script = ExtResource("18_sqoqm")
+
+[node name="DragZone" type="Area2D" parent="." unique_id=1328563571]
+position = Vector2(610, 487)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DragZone" unique_id=1992672189]
+position = Vector2(-57.5, -44.80002)
+scale = Vector2(16.16, 16.16)
+shape = SubResource("RectangleShape2D_7sxda")
