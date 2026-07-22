@@ -6,7 +6,7 @@ extends Node2D
 ## Destination X coordinate on the right side of the screen
 @export var right_x: float = 2100.0
 ## Fixed Y position where vehicles move across
-@export var road_y: float = 300.0
+@export var road_y: float = 600.0
 
 @export_group("Traffic Control")
 ## 0.0 = Quiet/Sparse traffic, 1.0 = Heavy/Frequent traffic
