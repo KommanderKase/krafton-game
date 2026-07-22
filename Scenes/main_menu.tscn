@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bfsqf7jumrqrb" path="res://Assets/Images/TRANSITION.png" id="5_n45e2"]
 [ext_resource type="Texture2D" uid="uid://2bqjptcqj0fj" path="res://Assets/Images/Background and Objects/Vehicles/GREENCAR MOTIONBLURRED.png" id="6_m3bi6"]
 [ext_resource type="Texture2D" uid="uid://smbvmnytdm6r" path="res://Assets/Images/Background and Objects/Vehicles/GREYCAR MOTIONBLURRED.png" id="7_wyh8j"]
+[ext_resource type="Script" uid="uid://c3t2sv161gn43" path="res://Scenes/scene_transition.gd" id="11_t1dhk"]
 
 [node name="Main Menu" type="Node2D" unique_id=1883568903]
 script = ExtResource("1_dy5lf")
@@ -44,6 +45,7 @@ scale = Vector2(0.45, 0.45)
 texture = ExtResource("7_wyh8j")
 
 [node name="Button_manager" type="Control" parent="." unique_id=824363428]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 603.0
@@ -116,10 +118,26 @@ alignment = 0
 stream = ExtResource("3_fu7sn")
 autoplay = true
 
-[node name="Transition" type="Sprite2D" parent="." unique_id=672639473]
+[node name="TransitionDebugButton" type="Button" parent="." unique_id=1236108155]
+offset_left = 823.0
+offset_top = 175.0
+offset_right = 1070.0
+offset_bottom = 240.0
+theme = ExtResource("2_7gogf")
+text = "PLAY TRANSITION"
+alignment = 0
+
+[node name="SceneTransition" type="CanvasLayer" parent="." unique_id=1320800818]
+layer = 100
 visible = false
-position = Vector2(581, 327)
-scale = Vector2(0.37400797, 0.6238426)
+script = ExtResource("11_t1dhk")
+
+[node name="GradientImage" type="TextureRect" parent="SceneTransition" unique_id=2119928086]
+offset_left = -5474.0
+offset_top = -207.0
+offset_right = 6622.0
+offset_bottom = 873.0
+mouse_filter = 2
 texture = ExtResource("5_n45e2")
 
 [connection signal="pressed" from="Button_manager/Start" to="." method="_on_start_pressed"]

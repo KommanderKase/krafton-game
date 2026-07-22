@@ -50,7 +50,7 @@ func _check_postmark_correct(type: String) -> bool:
 	if not letter_data:
 		return false
 	match letter_data.route:
-		"RFD 1", "RFD 2", "RFD 3", "LOCAL":
+		"RFD 1", "RFD 2", 	"RFD 3", "LOCAL":
 			return type == "RURAL ROUTE"
 		"PO BOX", "GENERAL DELIVERY":
 			return type == "RURAL ROUTE"
