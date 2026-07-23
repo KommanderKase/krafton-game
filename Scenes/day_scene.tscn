@@ -17,7 +17,12 @@
 [ext_resource type="Texture2D" uid="uid://smbvmnytdm6r" path="res://Assets/Images/Background and Objects/Vehicles/GREYCAR MOTIONBLURRED.png" id="9_t122b"]
 [ext_resource type="Script" uid="uid://5228sqb0n1fa" path="res://Scenes/drawers.gd" id="10_le5y8"]
 [ext_resource type="Texture2D" uid="uid://c758nn74dx6nb" path="res://Assets/Images/Day/drawers.png" id="11_jxcnm"]
-[ext_resource type="Script" uid="uid://cjgjhenoflj8h" path="res://Scenes/drag_manager.gd" id="18_sqoqm"]
+[ext_resource type="Texture2D" uid="uid://b7tglv52md0fx" path="res://Assets/Images/Background and Objects/PACKAGES/LONG PACKAGE 2.png" id="19_8vc6g"]
+[ext_resource type="Script" uid="uid://c85ycvef4y24b" path="res://Scenes/draggable.gd" id="20_t122b"]
+[ext_resource type="Texture2D" uid="uid://ded73h2kift4h" path="res://Assets/Images/Evening/MANUAL/MANUAL BACK.png" id="20_vjyun"]
+[ext_resource type="Texture2D" uid="uid://558sufuoew7e" path="res://Assets/Images/Evening/MANUAL/MANUAL FRONT PAGE.png" id="21_l0sh5"]
+[ext_resource type="Texture2D" uid="uid://nr3l3ydqwp6k" path="res://Assets/Images/Evening/MANUAL/MANUAL FRONT.png" id="22_qexap"]
+[ext_resource type="Texture2D" uid="uid://c7g7ypjf8dmn8" path="res://Assets/Images/Evening/MANUAL/MANUAL MAIN.png" id="23_j7moh"]
 
 [sub_resource type="Animation" id="Animation_gu4d3"]
 length = 0.001
@@ -152,7 +157,10 @@ size = Vector2(59.81543, 508.4309)
 size = Vector2(144, 61)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7sxda"]
-size = Vector2(68.13119, 14.455444)
+size = Vector2(47.88439, 11.678638)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8h3fl"]
+size = Vector2(2.19, 2.19)
 
 [node name="Day" type="Node2D" unique_id=541089571]
 script = ExtResource("1_7vt43")
@@ -260,6 +268,14 @@ shape = SubResource("RectangleShape2D_6jhai")
 
 [node name="Content" type="Sprite2D" parent="Drawers/Drawer1" unique_id=2015242034]
 
+[node name="DragZone" type="Area2D" parent="Drawers/Drawer1" unique_id=1134942471 groups=["drag_zone"]]
+position = Vector2(610, 487)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawers/Drawer1/DragZone" unique_id=2037618408]
+position = Vector2(-534.5, 244.05005)
+scale = Vector2(16.16, 16.16)
+shape = SubResource("RectangleShape2D_7sxda")
+
 [node name="Drawer2" type="Node2D" parent="Drawers" unique_id=201371426]
 
 [node name="BaseTexture" type="Sprite2D" parent="Drawers/Drawer2" unique_id=1469753280]
@@ -294,13 +310,53 @@ shape = SubResource("RectangleShape2D_6jhai")
 [node name="Content" type="Sprite2D" parent="Drawers/Drawer3" unique_id=609362547]
 position = Vector2(300.11108, 0)
 
-[node name="DragManager" type="Node2D" parent="." unique_id=1622864244]
-script = ExtResource("18_sqoqm")
+[node name="DragManager" type="Node2D" parent="." unique_id=1636403366]
 
-[node name="DragZone" type="Area2D" parent="." unique_id=1328563571]
-position = Vector2(610, 487)
+[node name="DragZone" type="Area2D" parent="." unique_id=1328563571 groups=["drag_zone"]]
+position = Vector2(641.09, 487)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DragZone" unique_id=1992672189]
-position = Vector2(-57.5, -44.80002)
-scale = Vector2(16.16, 16.16)
+position = Vector2(-86.86, -35.967)
+scale = Vector2(22.965, 21.77)
 shape = SubResource("RectangleShape2D_7sxda")
+
+[node name="LongPackage2" type="Sprite2D" parent="." unique_id=1548482272]
+position = Vector2(760.99994, 487.99994)
+scale = Vector2(0.5767045, 0.5767045)
+texture = ExtResource("19_8vc6g")
+script = ExtResource("20_t122b")
+
+[node name="Manual" type="Node2D" parent="." unique_id=1898963307]
+position = Vector2(760.99994, 487.99994)
+scale = Vector2(0.5767045, 0.5767045)
+
+[node name="ManualBack" type="Sprite2D" parent="Manual" unique_id=1739117410]
+visible = false
+position = Vector2(-480.3153, -237.55658)
+scale = Vector2(0.8669952, 0.8669952)
+texture = ExtResource("20_vjyun")
+
+[node name="DogEars" type="Area2D" parent="Manual" unique_id=766912685 groups=["drag_zone"]]
+visible = false
+position = Vector2(641.09, 487)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Manual/DogEars" unique_id=1837074696]
+position = Vector2(-1415.3159, -364.07593)
+scale = Vector2(22.965012, 21.770012)
+shape = SubResource("RectangleShape2D_8h3fl")
+
+[node name="ManualFrontPage" type="Sprite2D" parent="Manual" unique_id=1176241557]
+position = Vector2(-480.3153, -237.55658)
+scale = Vector2(0.8669952, 0.8669952)
+texture = ExtResource("21_l0sh5")
+
+[node name="ManualFront" type="Sprite2D" parent="Manual" unique_id=669887366]
+position = Vector2(-482.0492, -237.55656)
+scale = Vector2(0.8669952, 0.8669952)
+texture = ExtResource("22_qexap")
+
+[node name="ManualMain" type="Sprite2D" parent="Manual" unique_id=1637453248]
+visible = false
+position = Vector2(-480.3153, -237.55658)
+scale = Vector2(0.8669952, 0.8669952)
+texture = ExtResource("23_j7moh")

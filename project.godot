@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Dialogic="*uid://ds2q0uclmolvu"
 GameManager="*uid://cquobjx1vk60"
 LetterManager="*uid://hgki40dqg80w"
+SceneTransition="*uid://5jswrnv4u43b"
 
 [dialogic]
 

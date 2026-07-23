@@ -1,67 +1,38 @@
 extends CanvasLayer
 
-signal screen_covered
-signal transition_finished
+@onready var texture_rect: TextureRect = $GradientImage
 
-@export var duration: float = 0.5
-@export var debug_mode: bool = true
+func _ready() -> void:
+	texture_rect.visible = false
 
-@onready var gradient_rect = $GradientImage
-@onready var debug_button = $"../TransitionDebugButton"
-
-var is_covered: bool = false
-
-func _ready():
-	# Make sure we wait until the node is fully in the scene tree
-	if not is_inside_tree():
-		await tree_entered
-		
-	setup_rect()
+func transition_to_scene(target_scene_path: String) -> void:
+	var screen_size: Vector2 = get_viewport().get_visible_rect().size
+	texture_rect.visible = true
 	
-	# Start at the very left (off-screen)
-	gradient_rect.position.x = -get_screen_size().x
+	# Calculate the TRUE actual width of your TextureRect (accounting for scale)
+	var texture_width: float = texture_rect.size.x * texture_rect.scale.x
+	var texture_height: float = texture_rect.size.y * texture_rect.scale.y
 	
-	# Handle the debug button
-	debug_button.visible = debug_mode
-	if not debug_button.pressed.is_connected(play_transition):
-		debug_button.pressed.connect(play_transition)
+	# Target X position when centered over the screen
+	var center_x: float = (screen_size.x - texture_width) / 2.0
 
-func get_screen_size() -> Vector2:
-	# If in tree, get actual viewport size; otherwise fallback to Project Settings size
-	if is_inside_tree() and get_viewport():
-		return get_viewport().get_visible_rect().size
-	
-	return Vector2(
-		ProjectSettings.get_setting("display/window/size/viewport_width"),
-		ProjectSettings.get_setting("display/window/size/viewport_height")
-	)
+	# 1. Start completely off-screen right
+	texture_rect.position = Vector2(screen_size.x, (screen_size.y - texture_height) / 2.0)
 
-func setup_rect():
-	var screen_size = get_screen_size()
-	gradient_rect.size = screen_size
+	# 2. Slide from right to center
+	var tween_in = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+	tween_in.tween_property(texture_rect, "position:x", center_x, 0.4)
+	await tween_in.finished
 
-func play_transition():
-	setup_rect()
-	var screen_width = get_screen_size().x
-	
-	var tween = create_tween()
-	tween.set_trans(Tween.TRANS_CUBIC)
-	tween.set_ease(Tween.EASE_IN_OUT)
-	
-	if not is_covered:
-		# PHASE 1: Move Left to Center
-		gradient_rect.position.x = -screen_width
-		tween.tween_property(gradient_rect, "position:x", 0.0, duration)
-		
-		tween.finished.connect(func(): screen_covered.emit())
-		is_covered = true
-		
-	else:
-		# PHASE 2: Move Center to Right
-		tween.tween_property(gradient_rect, "position:x", screen_width, duration)
-		
-		tween.finished.connect(func(): 
-			gradient_rect.position.x = -screen_width
-			transition_finished.emit()
-		)
-		is_covered = false
+	# 3. Change the scene while covered, then wait for 1 second
+	get_tree().change_scene_to_file(target_scene_path)
+	await get_tree().create_timer(1.0).timeout
+
+	# 4. Slide completely off-screen left (moves entire width past 0)
+	var tween_out = create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
+	tween_out.tween_property(texture_rect, "position:x", -texture_width, 0.4)
+	await tween_out.finished
+
+	# Hide and reset position back off-screen right
+	texture_rect.visible = false
+	texture_rect.position.x = screen_size.x

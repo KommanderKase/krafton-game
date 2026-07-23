@@ -32,3 +32,4 @@ mailman: Then you can learn the rest by yourself. Check the drawers, there's an 
 - Okay.
 mailman: I gotta go deliever more packages. You'll get the jist of it.
 - Thanks.
+	[signal arg="res://Scenes/day_scene.tscn"]

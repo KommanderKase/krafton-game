@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cay8u7meittdm"]
+
+[node name="Prologue" type="Node2D" unique_id=542977085]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1180695824]
+offset_left = -16.0
+offset_top = -5.0
+offset_right = 1164.0
+offset_bottom = 656.0
+color = Color(0, 0, 0, 1)
