@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b81opb3oe7rid"]
+
+[ext_resource type="Texture2D" uid="uid://b6l3fepxkxoic" path="res://Assets/Images/Characters/OLD FARMER.png" id="1_nfgxv"]
+
+[node name="OldFarmer" type="Node2D" unique_id=1649576492]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=37304255]
+position = Vector2(0, 1.9073486e-06)
+scale = Vector2(1.232258, 1.2322582)
+texture = ExtResource("1_nfgxv")

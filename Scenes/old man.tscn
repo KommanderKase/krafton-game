@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://buwt1if6571po"]
+
+[ext_resource type="Texture2D" uid="uid://2wso3661xh30" path="res://Assets/Images/Characters/OLDMAN.png" id="1_mc58a"]
+
+[node name="OldMan" type="Node2D" unique_id=1892122579]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1351083387]
+scale = Vector2(0.6988546, 0.6988546)
+texture = ExtResource("1_mc58a")

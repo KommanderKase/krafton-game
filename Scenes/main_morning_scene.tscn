@@ -158,10 +158,10 @@ position = Vector2(271, 316.83173)
 scale = Vector2(0.603125, 0.592281)
 texture = ExtResource("4_wuias")
 
-[node name="MAILMAN" type="Sprite2D" parent="." unique_id=1138173405]
+[node name="MAILMAN" type="Sprite2D" parent="MAILMAN OUTLINE" unique_id=1138173405]
 texture_filter = 1
-position = Vector2(266, 316.8317)
-scale = Vector2(0.5608269, 0.56082684)
+position = Vector2(-8.290131, 0)
+scale = Vector2(0.92986846, 0.9468932)
 texture = ExtResource("5_wuias")
 
 [node name="Node2D" parent="." unique_id=1393086259 instance=ExtResource("9_8o72r")]
