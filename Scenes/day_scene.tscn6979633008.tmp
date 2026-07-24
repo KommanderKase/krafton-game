@@ -17,9 +17,15 @@
 [ext_resource type="Script" uid="uid://5228sqb0n1fa" path="res://Scenes/drawers.gd" id="10_le5y8"]
 [ext_resource type="Texture2D" uid="uid://c758nn74dx6nb" path="res://Assets/Images/Day/drawers.png" id="11_jxcnm"]
 [ext_resource type="Script" uid="uid://cayt31byb6k2k" path="res://Scenes/customer.gd" id="12_qexap"]
+[ext_resource type="Texture2D" uid="uid://b7tglv52md0fx" path="res://Assets/Images/Background and Objects/PACKAGES/LONG PACKAGE 2.png" id="19_8vc6g"]
+[ext_resource type="Script" uid="uid://dpdwp102hlh1d" path="res://Scenes/package.gd" id="19_a62xp"]
+[ext_resource type="Texture2D" uid="uid://c7chmkeweuqwu" path="res://Assets/Images/Background and Objects/PACKAGES/MAIL 1.png" id="20_ea63q"]
 [ext_resource type="Script" uid="uid://b7ne5vustysjy" path="res://Scenes/book_interactive.gd" id="20_qexap"]
+[ext_resource type="Script" uid="uid://c85ycvef4y24b" path="res://Scenes/draggable.gd" id="20_t122b"]
 [ext_resource type="Texture2D" uid="uid://ded73h2kift4h" path="res://Assets/Images/Evening/MANUAL/MANUAL BACK.png" id="20_vjyun"]
+[ext_resource type="Texture2D" uid="uid://c5714t6gy03ih" path="res://Assets/Images/Background and Objects/PACKAGES/SMALL PACKAGE 3.png" id="21_a62xp"]
 [ext_resource type="Texture2D" uid="uid://558sufuoew7e" path="res://Assets/Images/Evening/MANUAL/MANUAL FRONT PAGE.png" id="21_l0sh5"]
+[ext_resource type="Texture2D" uid="uid://bx651smvw8ker" path="res://Assets/Images/Background and Objects/PACKAGES/SMALL PACKAGE 2.png" id="22_3qu01"]
 [ext_resource type="Script" uid="uid://blec5ie4wpxhx" path="res://Scenes/book_page.gd" id="22_j7moh"]
 [ext_resource type="Texture2D" uid="uid://nr3l3ydqwp6k" path="res://Assets/Images/Evening/MANUAL/MANUAL FRONT.png" id="22_qexap"]
 [ext_resource type="Texture2D" uid="uid://c7g7ypjf8dmn8" path="res://Assets/Images/Evening/MANUAL/MANUAL MAIN.png" id="23_j7moh"]
@@ -27,20 +33,6 @@
 [ext_resource type="Theme" uid="uid://1casi3s2t3el" path="res://resources/button.tres" id="27_g26qc"]
 [ext_resource type="Texture2D" uid="uid://cs56xmqmt1p7y" path="res://Assets/Images/Characters/mailman.png" id="27_vjl7n"]
 [ext_resource type="Texture2D" uid="uid://dby00b8rfeg8e" path="res://Assets/Images/Characters/sheriff.png" id="28_ht00o"]
-[ext_resource type="Script" uid="uid://cgt00qc5m3yjy" path="res://Scenes/postal_grid.gd" id="34_3qu01"]
-[ext_resource type="PackedScene" uid="uid://drp6inqtr3nem" path="res://Packages/long_package_1.tscn" id="35_5q30e"]
-[ext_resource type="PackedScene" uid="uid://pj68bxxjsniw" path="res://Packages/long_package_2.tscn" id="36_5nvlt"]
-[ext_resource type="PackedScene" uid="uid://cl3t44v87iusw" path="res://Packages/long_package_3.tscn" id="37_wjw18"]
-[ext_resource type="PackedScene" uid="uid://cgat8pblfya43" path="res://Packages/mail_1.tscn" id="38_2obni"]
-[ext_resource type="PackedScene" uid="uid://ygr541euc8n0" path="res://Packages/mail_2.tscn" id="39_mtkk8"]
-[ext_resource type="PackedScene" uid="uid://cb6idi6bdvfgq" path="res://Packages/mail_3.tscn" id="40_s26qt"]
-[ext_resource type="PackedScene" uid="uid://d4m3wchrswqxh" path="res://Packages/package_1.tscn" id="41_cfveg"]
-[ext_resource type="PackedScene" uid="uid://bwnt1uolbekmw" path="res://Packages/package_2.tscn" id="42_egrgo"]
-[ext_resource type="PackedScene" uid="uid://cdnuwoex7auov" path="res://Packages/package_3.tscn" id="43_urwlx"]
-[ext_resource type="PackedScene" uid="uid://c01d6du46yqle" path="res://Packages/package_4.tscn" id="44_1v2nk"]
-[ext_resource type="PackedScene" uid="uid://bo4iiwxfdkejj" path="res://Packages/small_package_1.tscn" id="45_aocue"]
-[ext_resource type="PackedScene" uid="uid://qljr78q8i7rs" path="res://Packages/small_package_2.tscn" id="46_pdwd5"]
-[ext_resource type="PackedScene" uid="uid://bn1dmm5aby4xi" path="res://Packages/small_package_3.tscn" id="47_2kc4f"]
 
 [sub_resource type="Animation" id="Animation_gu4d3"]
 length = 0.001
@@ -172,7 +164,7 @@ _data = {
 size = Vector2(59.81543, 508.4309)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7sxda"]
-size = Vector2(46.705963, 11.678638)
+size = Vector2(47.88439, 11.678638)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6jhai"]
 size = Vector2(144, 61)
@@ -209,7 +201,7 @@ texture = ExtResource("4_ck12u")
 [node name="Traffic" type="Node2D" parent="." unique_id=383003750]
 script = ExtResource("5_qbhtl")
 road_y = 320.0
-traffic_density = 0.51
+traffic_density = 1.0
 
 [node name="Bicycle" type="Sprite2D" parent="Traffic" unique_id=1726864366]
 position = Vector2(397, 305.565)
@@ -255,30 +247,24 @@ script = ExtResource("9_jxcnm")
 slide_direction = 0
 
 [node name="Cardboard1" type="Node2D" parent="Cardboards" unique_id=777873253]
-position = Vector2(697.8461, 127.93845)
+position = Vector2(697.8461, 0)
 
 [node name="BaseTexture" type="Sprite2D" parent="Cardboards/Cardboard1" unique_id=69184070]
-position = Vector2(0, -119.630714)
 scale = Vector2(0.9999999, 1)
 texture = ExtResource("5_7vt43")
 
-[node name="PostalGrid" type="Node2D" parent="Cardboards/Cardboard1/BaseTexture" unique_id=1172905451 groups=["postal_grid"]]
-position = Vector2(236.37, 55.317)
-scale = Vector2(1.6615385, 1.6615384)
-script = ExtResource("34_3qu01")
-
 [node name="Handle" type="Area2D" parent="Cardboards/Cardboard1" unique_id=557624649]
-position = Vector2(206.03073, 157.84616)
+position = Vector2(206.03073, 277.47687)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cardboards/Cardboard1/Handle" unique_id=1279654475]
 scale = Vector2(0.9999999, 1)
 shape = SubResource("RectangleShape2D_fp1n2")
 
-[node name="DragZone" type="Area2D" parent="." unique_id=1328563571 groups=["base_drag_zone", "drag_zone"]]
+[node name="DragZone" type="Area2D" parent="." unique_id=1328563571 groups=["drag_zone"]]
 position = Vector2(641.09, 487)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DragZone" unique_id=1992672189]
-position = Vector2(-100.3913, -35.96701)
+position = Vector2(-86.86, -35.967)
 scale = Vector2(22.965, 21.77)
 shape = SubResource("RectangleShape2D_7sxda")
 
@@ -365,6 +351,31 @@ position = Vector2(-534.5, 247.5)
 scale = Vector2(16.16, 16.16)
 shape = SubResource("RectangleShape2D_qexap")
 
+[node name="Package1" type="Sprite2D" parent="." unique_id=1548482272]
+position = Vector2(760.99994, 487.99994)
+scale = Vector2(0.5767045, 0.5767045)
+texture = ExtResource("19_8vc6g")
+centered = false
+script = ExtResource("19_a62xp")
+
+[node name="Package2" type="Sprite2D" parent="." unique_id=1699178606]
+position = Vector2(540, 431.99997)
+scale = Vector2(0.5767045, 0.5767045)
+texture = ExtResource("20_ea63q")
+script = ExtResource("20_t122b")
+
+[node name="Package3" type="Sprite2D" parent="." unique_id=606164670]
+position = Vector2(585.9999, 476.99997)
+scale = Vector2(0.5767045, 0.5767045)
+texture = ExtResource("21_a62xp")
+script = ExtResource("20_t122b")
+
+[node name="Package4" type="Sprite2D" parent="." unique_id=1949897285]
+position = Vector2(973.00006, 453)
+scale = Vector2(0.5767045, 0.5767045)
+texture = ExtResource("22_3qu01")
+script = ExtResource("20_t122b")
+
 [node name="ManualBook" type="Area2D" parent="." unique_id=1818707568]
 position = Vector2(387.695, 463.6)
 script = ExtResource("20_qexap")
@@ -420,14 +431,12 @@ shape = SubResource("RectangleShape2D_8h3fl")
 scale = Vector2(12.555, 12.555)
 shape = SubResource("RectangleShape2D_8h3fl")
 
-[node name="CustomerManager" type="Node2D" parent="." unique_id=662433631 node_paths=PackedStringArray("customer_sprite", "next_button", "postal_grid")]
+[node name="CustomerManager" type="Node2D" parent="." unique_id=662433631 node_paths=PackedStringArray("customer_sprite", "next_button")]
 position = Vector2(387.695, 463.6)
 script = ExtResource("26_j7moh")
 customer_sprite = NodePath("../Character")
 next_button = NodePath("../NextButton")
 customer_textures = Array[Texture2D]([ExtResource("27_vjl7n"), ExtResource("28_ht00o")])
-package_scenes = Array[PackedScene]([ExtResource("35_5q30e"), ExtResource("36_5nvlt"), ExtResource("37_wjw18"), ExtResource("38_2obni"), ExtResource("39_mtkk8"), ExtResource("40_s26qt"), ExtResource("41_cfveg"), ExtResource("42_egrgo"), ExtResource("43_urwlx"), ExtResource("44_1v2nk"), ExtResource("45_aocue"), ExtResource("46_pdwd5"), ExtResource("47_2kc4f")])
-postal_grid = NodePath("../Cardboards/Cardboard1/BaseTexture/PostalGrid")
 
 [node name="NextButton" type="Button" parent="." unique_id=652173961]
 offset_left = 834.0

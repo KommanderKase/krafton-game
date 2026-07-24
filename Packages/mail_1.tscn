@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cgat8pblfya43"]
+
+[ext_resource type="Texture2D" uid="uid://c7chmkeweuqwu" path="res://Assets/Images/Background and Objects/PACKAGES/MAIL 1.png" id="1_jrnbm"]
+[ext_resource type="Script" uid="uid://dpdwp102hlh1d" path="res://Scenes/package.gd" id="2_8id63"]
+
+[node name="MAIL 1" type="Sprite2D" unique_id=284029404]
+scale = Vector2(0.577, 0.577)
+texture = ExtResource("1_jrnbm")
+centered = false
+script = ExtResource("2_8id63")
+grid_height = 2

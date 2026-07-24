@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cl3t44v87iusw"]
+
+[ext_resource type="Texture2D" uid="uid://bqc4unwh6dcfj" path="res://Assets/Images/Background and Objects/PACKAGES/LONG PACKAGE 3.png" id="1_w7t2k"]
+[ext_resource type="Script" uid="uid://dpdwp102hlh1d" path="res://Scenes/package.gd" id="2_wamro"]
+
+[node name="LONG PACKAGE 3" type="Sprite2D" unique_id=1229780369]
+scale = Vector2(0.577, 0.577)
+texture = ExtResource("1_w7t2k")
+centered = false
+script = ExtResource("2_wamro")
+grid_width = 7
+grid_height = 2

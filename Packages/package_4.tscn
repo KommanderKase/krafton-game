@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c01d6du46yqle"]
+
+[ext_resource type="Texture2D" uid="uid://dlhx67i0ifkiy" path="res://Assets/Images/Background and Objects/PACKAGES/PACKAGE 4.png" id="1_jul2k"]
+[ext_resource type="Script" uid="uid://dpdwp102hlh1d" path="res://Scenes/package.gd" id="2_tdoyo"]
+
+[node name="PACKAGE 4" type="Sprite2D" unique_id=2109210835]
+scale = Vector2(0.577, 0.577)
+texture = ExtResource("1_jul2k")
+centered = false
+script = ExtResource("2_tdoyo")
+grid_width = 4

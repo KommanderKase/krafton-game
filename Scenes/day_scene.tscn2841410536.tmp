@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://3ajufksunddq" path="res://Scripts/day_scene.gd" id="1_7vt43"]
 [ext_resource type="Texture2D" uid="uid://b5506ndjh18qs" path="res://Assets/Images/Day/daybackground-skyandbuildings.png" id="4_ck12u"]
+[ext_resource type="Texture2D" uid="uid://dtapamlbvbujq" path="res://Assets/Images/Characters/MAILMAN SHADOW.png" id="4_jjwb3"]
 [ext_resource type="Texture2D" uid="uid://dbgl6imhircbg" path="res://Assets/Images/Background and Objects/CARDBOARD.png" id="5_7vt43"]
 [ext_resource type="Texture2D" uid="uid://c23n7jixmuvfn" path="res://Assets/Images/Characters/MAILMAN-BLUEST.png" id="5_ck12u"]
 [ext_resource type="PackedScene" uid="uid://bnq56is3fuyv8" path="res://Scenes/node_2d.tscn" id="5_jxcnm"]
@@ -16,31 +17,14 @@
 [ext_resource type="Texture2D" uid="uid://smbvmnytdm6r" path="res://Assets/Images/Background and Objects/Vehicles/GREYCAR MOTIONBLURRED.png" id="9_t122b"]
 [ext_resource type="Script" uid="uid://5228sqb0n1fa" path="res://Scenes/drawers.gd" id="10_le5y8"]
 [ext_resource type="Texture2D" uid="uid://c758nn74dx6nb" path="res://Assets/Images/Day/drawers.png" id="11_jxcnm"]
-[ext_resource type="Script" uid="uid://cayt31byb6k2k" path="res://Scenes/customer.gd" id="12_qexap"]
+[ext_resource type="Texture2D" uid="uid://b7tglv52md0fx" path="res://Assets/Images/Background and Objects/PACKAGES/LONG PACKAGE 2.png" id="19_8vc6g"]
 [ext_resource type="Script" uid="uid://b7ne5vustysjy" path="res://Scenes/book_interactive.gd" id="20_qexap"]
+[ext_resource type="Script" uid="uid://c85ycvef4y24b" path="res://Scenes/draggable.gd" id="20_t122b"]
 [ext_resource type="Texture2D" uid="uid://ded73h2kift4h" path="res://Assets/Images/Evening/MANUAL/MANUAL BACK.png" id="20_vjyun"]
 [ext_resource type="Texture2D" uid="uid://558sufuoew7e" path="res://Assets/Images/Evening/MANUAL/MANUAL FRONT PAGE.png" id="21_l0sh5"]
 [ext_resource type="Script" uid="uid://blec5ie4wpxhx" path="res://Scenes/book_page.gd" id="22_j7moh"]
 [ext_resource type="Texture2D" uid="uid://nr3l3ydqwp6k" path="res://Assets/Images/Evening/MANUAL/MANUAL FRONT.png" id="22_qexap"]
 [ext_resource type="Texture2D" uid="uid://c7g7ypjf8dmn8" path="res://Assets/Images/Evening/MANUAL/MANUAL MAIN.png" id="23_j7moh"]
-[ext_resource type="Script" uid="uid://cec0awf2i16m1" path="res://Scenes/customer_manager.gd" id="26_j7moh"]
-[ext_resource type="Theme" uid="uid://1casi3s2t3el" path="res://resources/button.tres" id="27_g26qc"]
-[ext_resource type="Texture2D" uid="uid://cs56xmqmt1p7y" path="res://Assets/Images/Characters/mailman.png" id="27_vjl7n"]
-[ext_resource type="Texture2D" uid="uid://dby00b8rfeg8e" path="res://Assets/Images/Characters/sheriff.png" id="28_ht00o"]
-[ext_resource type="Script" uid="uid://cgt00qc5m3yjy" path="res://Scenes/postal_grid.gd" id="34_3qu01"]
-[ext_resource type="PackedScene" uid="uid://drp6inqtr3nem" path="res://Packages/long_package_1.tscn" id="35_5q30e"]
-[ext_resource type="PackedScene" uid="uid://pj68bxxjsniw" path="res://Packages/long_package_2.tscn" id="36_5nvlt"]
-[ext_resource type="PackedScene" uid="uid://cl3t44v87iusw" path="res://Packages/long_package_3.tscn" id="37_wjw18"]
-[ext_resource type="PackedScene" uid="uid://cgat8pblfya43" path="res://Packages/mail_1.tscn" id="38_2obni"]
-[ext_resource type="PackedScene" uid="uid://ygr541euc8n0" path="res://Packages/mail_2.tscn" id="39_mtkk8"]
-[ext_resource type="PackedScene" uid="uid://cb6idi6bdvfgq" path="res://Packages/mail_3.tscn" id="40_s26qt"]
-[ext_resource type="PackedScene" uid="uid://d4m3wchrswqxh" path="res://Packages/package_1.tscn" id="41_cfveg"]
-[ext_resource type="PackedScene" uid="uid://bwnt1uolbekmw" path="res://Packages/package_2.tscn" id="42_egrgo"]
-[ext_resource type="PackedScene" uid="uid://cdnuwoex7auov" path="res://Packages/package_3.tscn" id="43_urwlx"]
-[ext_resource type="PackedScene" uid="uid://c01d6du46yqle" path="res://Packages/package_4.tscn" id="44_1v2nk"]
-[ext_resource type="PackedScene" uid="uid://bo4iiwxfdkejj" path="res://Packages/small_package_1.tscn" id="45_aocue"]
-[ext_resource type="PackedScene" uid="uid://qljr78q8i7rs" path="res://Packages/small_package_2.tscn" id="46_pdwd5"]
-[ext_resource type="PackedScene" uid="uid://bn1dmm5aby4xi" path="res://Packages/small_package_3.tscn" id="47_2kc4f"]
 
 [sub_resource type="Animation" id="Animation_gu4d3"]
 length = 0.001
@@ -171,14 +155,11 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fp1n2"]
 size = Vector2(59.81543, 508.4309)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7sxda"]
-size = Vector2(46.705963, 11.678638)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6jhai"]
 size = Vector2(144, 61)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qexap"]
-size = Vector2(7.7351494, 10.086632)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7sxda"]
+size = Vector2(47.88439, 11.678638)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8h3fl"]
 size = Vector2(2.19, 2.19)
@@ -208,8 +189,6 @@ texture = ExtResource("4_ck12u")
 
 [node name="Traffic" type="Node2D" parent="." unique_id=383003750]
 script = ExtResource("5_qbhtl")
-road_y = 320.0
-traffic_density = 0.51
 
 [node name="Bicycle" type="Sprite2D" parent="Traffic" unique_id=1726864366]
 position = Vector2(397, 305.565)
@@ -236,12 +215,16 @@ position = Vector2(575.44446, 324.5)
 scale = Vector2(0.599074, 0.599074)
 texture = ExtResource("5_le5y8")
 
-[node name="Character" type="Sprite2D" parent="." unique_id=638741522]
+[node name="MAILMAN OUTLINE" type="Sprite2D" parent="." unique_id=2119328655]
+position = Vector2(216, 169)
+scale = Vector2(0.4041667, 0.4037037)
+texture = ExtResource("4_jjwb3")
+
+[node name="MAILMAN" type="Sprite2D" parent="." unique_id=638741522]
 texture_filter = 1
 position = Vector2(216, 169)
 scale = Vector2(0.38333678, 0.38333678)
 texture = ExtResource("5_ck12u")
-script = ExtResource("12_qexap")
 
 [node name="Worktable" type="Sprite2D" parent="." unique_id=94558783]
 position = Vector2(578.00006, 323.00003)
@@ -255,39 +238,23 @@ script = ExtResource("9_jxcnm")
 slide_direction = 0
 
 [node name="Cardboard1" type="Node2D" parent="Cardboards" unique_id=777873253]
-position = Vector2(697.8461, 127.93845)
+position = Vector2(697.8461, 0)
 
 [node name="BaseTexture" type="Sprite2D" parent="Cardboards/Cardboard1" unique_id=69184070]
-position = Vector2(0, -119.630714)
 scale = Vector2(0.9999999, 1)
 texture = ExtResource("5_7vt43")
 
-[node name="PostalGrid" type="Node2D" parent="Cardboards/Cardboard1/BaseTexture" unique_id=1172905451 groups=["postal_grid"]]
-position = Vector2(236.37, 55.317)
-scale = Vector2(1.6615385, 1.6615384)
-script = ExtResource("34_3qu01")
-
 [node name="Handle" type="Area2D" parent="Cardboards/Cardboard1" unique_id=557624649]
-position = Vector2(206.03073, 157.84616)
+position = Vector2(206.03073, 277.47687)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cardboards/Cardboard1/Handle" unique_id=1279654475]
 scale = Vector2(0.9999999, 1)
 shape = SubResource("RectangleShape2D_fp1n2")
 
-[node name="DragZone" type="Area2D" parent="." unique_id=1328563571 groups=["base_drag_zone", "drag_zone"]]
-position = Vector2(641.09, 487)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DragZone" unique_id=1992672189]
-position = Vector2(-100.3913, -35.96701)
-scale = Vector2(22.965, 21.77)
-shape = SubResource("RectangleShape2D_7sxda")
-
 [node name="Drawers" type="Node2D" parent="." unique_id=1515442827]
 script = ExtResource("10_le5y8")
 
 [node name="Drawer1" type="Node2D" parent="Drawers" unique_id=2126914481]
-position = Vector2(0, -141)
-scale = Vector2(1.2, 1.2)
 
 [node name="BaseTexture" type="Sprite2D" parent="Drawers/Drawer1" unique_id=1811084352]
 position = Vector2(221, 669)
@@ -307,132 +274,138 @@ shape = SubResource("RectangleShape2D_6jhai")
 position = Vector2(610, 487)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Drawers/Drawer1/DragZone" unique_id=2037618408]
-position = Vector2(-534.5, 247.5)
+position = Vector2(-534.5, 244.05005)
 scale = Vector2(16.16, 16.16)
-shape = SubResource("RectangleShape2D_qexap")
+shape = SubResource("RectangleShape2D_7sxda")
 
-[node name="Drawer2" type="Node2D" parent="Drawers" unique_id=72478034]
-position = Vector2(0, -141)
-scale = Vector2(1.2, 1.2)
+[node name="Drawer2" type="Node2D" parent="Drawers" unique_id=201371426]
 
-[node name="BaseTexture" type="Sprite2D" parent="Drawers/Drawer2" unique_id=1532660869]
-position = Vector2(382.61108, 669)
+[node name="BaseTexture" type="Sprite2D" parent="Drawers/Drawer2" unique_id=1469753280]
+position = Vector2(371.11108, 669)
 scale = Vector2(0.59907407, 0.59907407)
 texture = ExtResource("11_jxcnm")
 
-[node name="Handle" type="Area2D" parent="Drawers/Drawer2" unique_id=1032895298]
-position = Vector2(236.61107, 596)
+[node name="Handle" type="Area2D" parent="Drawers/Drawer2" unique_id=981088820]
+position = Vector2(225.11108, 596)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawers/Drawer2/Handle" unique_id=829935830]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawers/Drawer2/Handle" unique_id=1321790650]
 position = Vector2(0, 20.5)
 shape = SubResource("RectangleShape2D_6jhai")
 
-[node name="Content" type="Sprite2D" parent="Drawers/Drawer2" unique_id=1436423450]
-position = Vector2(161.61107, 0)
+[node name="Content" type="Sprite2D" parent="Drawers/Drawer2" unique_id=303855226]
+position = Vector2(150.11108, 0)
 
-[node name="DragZone" type="Area2D" parent="Drawers/Drawer2" unique_id=1892170415 groups=["drag_zone"]]
-position = Vector2(771.611, 487)
+[node name="Drawer3" type="Node2D" parent="Drawers" unique_id=1177111644]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawers/Drawer2/DragZone" unique_id=1671940752]
-position = Vector2(-534.5, 247.5)
-scale = Vector2(16.16, 16.16)
-shape = SubResource("RectangleShape2D_qexap")
-
-[node name="Drawer3" type="Node2D" parent="Drawers" unique_id=1616251651]
-position = Vector2(0, -141)
-scale = Vector2(1.2, 1.2)
-
-[node name="BaseTexture" type="Sprite2D" parent="Drawers/Drawer3" unique_id=551443203]
-position = Vector2(541.7777, 669)
+[node name="BaseTexture" type="Sprite2D" parent="Drawers/Drawer3" unique_id=1877140553]
+position = Vector2(521.1111, 669)
 scale = Vector2(0.59907407, 0.59907407)
 texture = ExtResource("11_jxcnm")
 
-[node name="Handle" type="Area2D" parent="Drawers/Drawer3" unique_id=707174717]
-position = Vector2(395.7777, 596)
+[node name="Handle" type="Area2D" parent="Drawers/Drawer3" unique_id=1223914573]
+position = Vector2(375.11108, 596)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawers/Drawer3/Handle" unique_id=1884243322]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawers/Drawer3/Handle" unique_id=196428960]
 position = Vector2(0, 20.5)
 shape = SubResource("RectangleShape2D_6jhai")
 
-[node name="Content" type="Sprite2D" parent="Drawers/Drawer3" unique_id=1419596177]
-position = Vector2(320.7777, 0)
+[node name="Content" type="Sprite2D" parent="Drawers/Drawer3" unique_id=609362547]
+position = Vector2(300.11108, 0)
 
-[node name="DragZone" type="Area2D" parent="Drawers/Drawer3" unique_id=1525377349 groups=["drag_zone"]]
-position = Vector2(930.77765, 487)
+[node name="DragManager" type="Node2D" parent="." unique_id=1636403366]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawers/Drawer3/DragZone" unique_id=1712774883]
-position = Vector2(-534.5, 247.5)
-scale = Vector2(16.16, 16.16)
-shape = SubResource("RectangleShape2D_qexap")
+[node name="DragZone" type="Area2D" parent="." unique_id=1328563571 groups=["drag_zone"]]
+position = Vector2(641.09, 487)
 
-[node name="ManualBook" type="Area2D" parent="." unique_id=1818707568]
-position = Vector2(387.695, 463.6)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DragZone" unique_id=1992672189]
+position = Vector2(-86.86, -35.967)
+scale = Vector2(22.965, 21.77)
+shape = SubResource("RectangleShape2D_7sxda")
+
+[node name="LongPackage2" type="Sprite2D" parent="." unique_id=1548482272]
+position = Vector2(760.99994, 487.99994)
+scale = Vector2(0.5767045, 0.5767045)
+texture = ExtResource("19_8vc6g")
+script = ExtResource("20_t122b")
+
+[node name="Manual" type="Node2D" parent="." unique_id=1898963307]
+position = Vector2(760.99994, 487.99994)
+scale = Vector2(0.5767045, 0.5767045)
+
+[node name="Node2D" type="Node2D" parent="Manual" unique_id=593014275]
+position = Vector2(-480.3155, -237.55658)
+scale = Vector2(0.8669954, 0.8669954)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1818707568]
 script = ExtResource("20_qexap")
 
-[node name="FrontCover" type="Sprite2D" parent="ManualBook" unique_id=669887366]
+[node name="FrontCover" type="Sprite2D" parent="Area2D" unique_id=669887366]
 scale = Vector2(0.50000006, 0.50000006)
 texture = ExtResource("22_qexap")
 offset = Vector2(-113.6, 0)
 script = ExtResource("22_j7moh")
-left_dog_ear_offset = Vector2(-120, 77.4)
 show_right_dog_ear = true
-right_dog_ear_offset = Vector2(-10, 77.4)
 
-[node name="FrontPage" type="Sprite2D" parent="ManualBook" unique_id=1176241557]
+[node name="FrontPage" type="Sprite2D" parent="Area2D" unique_id=1176241557]
 visible = false
 scale = Vector2(0.50000006, 0.50000006)
 texture = ExtResource("21_l0sh5")
 script = ExtResource("22_j7moh")
 show_left_dog_ear = true
-left_dog_ear_offset = Vector2(-95, 65)
 show_right_dog_ear = true
-right_dog_ear_offset = Vector2(95, 65)
 
-[node name="MainPage" type="Sprite2D" parent="ManualBook" unique_id=1637453248]
+[node name="MainPage" type="Sprite2D" parent="Area2D" unique_id=1637453248]
 visible = false
 scale = Vector2(0.50000006, 0.50000006)
 texture = ExtResource("23_j7moh")
 script = ExtResource("22_j7moh")
 show_left_dog_ear = true
-left_dog_ear_offset = Vector2(-95, 65)
 show_right_dog_ear = true
-right_dog_ear_offset = Vector2(95, 65)
 
-[node name="BackCover" type="Sprite2D" parent="ManualBook" unique_id=2003126519]
+[node name="BackCover" type="Sprite2D" parent="Area2D" unique_id=2003126519]
 visible = false
 scale = Vector2(0.5000001, 0.5000001)
 texture = ExtResource("20_vjyun")
 offset = Vector2(116.385, 0)
 script = ExtResource("22_j7moh")
 show_left_dog_ear = true
-left_dog_ear_offset = Vector2(10, 77.4)
-right_dog_ear_offset = Vector2(120, 77.4)
 
-[node name="RightDogEar" type="Area2D" parent="ManualBook" unique_id=766912685 groups=["drag_zone"]]
+[node name="RightDogEar" type="Area2D" parent="Area2D" unique_id=766912685 groups=["drag_zone"]]
+position = Vector2(-11.92, 76.39)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ManualBook/RightDogEar" unique_id=1837074696]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/RightDogEar" unique_id=1837074696]
 scale = Vector2(12.555, 12.555)
 shape = SubResource("RectangleShape2D_8h3fl")
 
-[node name="LeftDogEar" type="Area2D" parent="ManualBook" unique_id=1864406385 groups=["drag_zone"]]
+[node name="ColorRect" type="ColorRect" parent="Area2D/RightDogEar" unique_id=982155502]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.919998
+offset_top = -13.919998
+offset_right = 13.919998
+offset_bottom = 13.919998
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ManualBook/LeftDogEar" unique_id=1426018107]
+[node name="LeftDogEar" type="Area2D" parent="Area2D" unique_id=1864406385 groups=["drag_zone"]]
+position = Vector2(-104.555, 76.39)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/LeftDogEar" unique_id=1426018107]
 scale = Vector2(12.555, 12.555)
 shape = SubResource("RectangleShape2D_8h3fl")
 
-[node name="CustomerManager" type="Node2D" parent="." unique_id=662433631 node_paths=PackedStringArray("customer_sprite", "next_button", "postal_grid")]
-position = Vector2(387.695, 463.6)
-script = ExtResource("26_j7moh")
-customer_sprite = NodePath("../Character")
-next_button = NodePath("../NextButton")
-customer_textures = Array[Texture2D]([ExtResource("27_vjl7n"), ExtResource("28_ht00o")])
-package_scenes = Array[PackedScene]([ExtResource("35_5q30e"), ExtResource("36_5nvlt"), ExtResource("37_wjw18"), ExtResource("38_2obni"), ExtResource("39_mtkk8"), ExtResource("40_s26qt"), ExtResource("41_cfveg"), ExtResource("42_egrgo"), ExtResource("43_urwlx"), ExtResource("44_1v2nk"), ExtResource("45_aocue"), ExtResource("46_pdwd5"), ExtResource("47_2kc4f")])
-postal_grid = NodePath("../Cardboards/Cardboard1/BaseTexture/PostalGrid")
-
-[node name="NextButton" type="Button" parent="." unique_id=652173961]
-offset_left = 834.0
-offset_top = 586.0
-offset_right = 934.0
-offset_bottom = 639.0
-theme = ExtResource("27_g26qc")
-text = "NEXT"
+[node name="ColorRect" type="ColorRect" parent="Area2D/LeftDogEar" unique_id=742302522]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.919998
+offset_top = -13.919998
+offset_right = 13.919998
+offset_bottom = 13.919998
+grow_horizontal = 2
+grow_vertical = 2
