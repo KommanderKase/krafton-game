@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dux2uwn004mpe"]
+
+[ext_resource type="Texture2D" uid="uid://4p705vplgotu" path="res://Assets/Images/Characters/SHERRIF-SHADOW.png" id="1_ugqs1"]
+[ext_resource type="Texture2D" uid="uid://fba3dibg41co" path="res://Assets/Images/Characters/SHERRIF.png" id="2_elg7c"]
+
+[node name="Sherriff" type="Node2D" unique_id=1446186831]
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=179872784]
+position = Vector2(-19, 0)
+scale = Vector2(1.0042156, 1.0000015)
+texture = ExtResource("1_ugqs1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=73979483]
+texture = ExtResource("2_elg7c")

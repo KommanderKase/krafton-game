@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://btxbsjae3h0bl"]
+
+[ext_resource type="Texture2D" uid="uid://cbcynmuj0lp8o" path="res://Assets/Images/Evening/eveningshelves.png" id="1_wxy1l"]
+[ext_resource type="Script" uid="uid://dc4afkf4tm86i" path="res://Scenes/rural.gd" id="2_2kk8g"]
+[ext_resource type="Script" uid="uid://c7hr8g2p410ce" path="res://Scenes/out_of_state.gd" id="3_2kk8g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwk65"]
+size = Vector2(108.84613, 176.15387)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2fs1"]
+size = Vector2(125.730774, 179.46158)
+
+[node name="Pigeonholes" type="Node2D" unique_id=2008360906]
+
+[node name="Pigeonholes" type="Sprite2D" parent="." unique_id=1210880837]
+position = Vector2(378, 220)
+scale = Vector2(0.3611111, 0.3611111)
+texture = ExtResource("1_wxy1l")
+
+[node name="RURAL" type="Node2D" parent="Pigeonholes" unique_id=663238765]
+script = ExtResource("2_2kk8g")
+
+[node name="DropArea" type="Area2D" parent="Pigeonholes/RURAL" unique_id=75585137]
+position = Vector2(-213.23077, -22.153809)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pigeonholes/RURAL/DropArea" unique_id=1817691414]
+position = Vector2(-3.0517578e-05, 0)
+shape = SubResource("RectangleShape2D_cwk65")
+
+[node name="ColorRect" type="ColorRect" parent="Pigeonholes/RURAL" unique_id=1644109178]
+offset_left = -263.07693
+offset_top = -110.76923
+offset_right = -223.07693
+offset_bottom = -70.76923
+scale = Vector2(2.5507627, 1)
+color = Color(0.39529458, 0.67173177, 0.53066987, 1)
+
+[node name="Label" type="Label" parent="Pigeonholes/RURAL" unique_id=2382371]
+offset_left = -263.0769
+offset_top = -110.769226
+offset_right = -223.0769
+offset_bottom = -87.769226
+scale = Vector2(1.4430702, 1.2215452)
+
+[node name="OUT OF STATE" type="Node2D" parent="Pigeonholes" unique_id=1910332565]
+script = ExtResource("3_2kk8g")
+
+[node name="DropArea" type="Area2D" parent="Pigeonholes/OUT OF STATE" unique_id=1682168939]
+position = Vector2(-479.07697, -224.30768)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pigeonholes/OUT OF STATE/DropArea" unique_id=1251550490]
+position = Vector2(4.673004e-05, 0)
+shape = SubResource("RectangleShape2D_k2fs1")
+
+[node name="ColorRect" type="ColorRect" parent="Pigeonholes/OUT OF STATE" unique_id=529753590]
+offset_left = -537.2308
+offset_top = -310.15387
+offset_right = -497.23077
+offset_bottom = -270.15387
+scale = Vector2(2.9938464, 1)
+color = Color(0.32267326, 0.64106584, 0.89351195, 1)
+
+[node name="Label" type="Label" parent="Pigeonholes/OUT OF STATE" unique_id=1559014797]
+offset_left = -537.2308
+offset_top = -310.15387
+offset_right = -497.23077
+offset_bottom = -287.15387
+scale = Vector2(1.6646191, 1.3323044)
