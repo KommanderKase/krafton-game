@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://ch0d1gidy74uq"]
 
 [ext_resource type="Texture2D" uid="uid://ccppygre4xghe" path="res://Assets/Images/Evening/eveningbackground-wall.png" id="1_5nhsg"]
-[ext_resource type="Script" uid="uid://bhesvdl344buo" path="res://Scenes/evening_scene.gd" id="1_kaohw"]
-[ext_resource type="Texture2D" uid="uid://cbcynmuj0lp8o" path="res://Assets/Images/Evening/eveningshelves.png" id="2_1l8dv"]
+[ext_resource type="Script" uid="uid://bhesvdl344buo" path="res://Scripts/evening_scene.gd" id="1_kaohw"]
 [ext_resource type="PackedScene" uid="uid://s0hyr552r0r0" path="res://Scenes/test_package.tscn" id="2_kaohw"]
+[ext_resource type="PackedScene" uid="uid://bnq56is3fuyv8" path="res://Scenes/node_2d.tscn" id="2_tnyoi"]
 [ext_resource type="Texture2D" uid="uid://bcw0vfdraen18" path="res://Assets/Images/Day/worktable.png" id="3_wpf5t"]
 [ext_resource type="Texture2D" uid="uid://fec7yl2xp7xn" path="res://Assets/Images/Evening/eveninglamp.png" id="4_bw72o"]
+[ext_resource type="PackedScene" uid="uid://btxbsjae3h0bl" path="res://Scenes/pigeonholes.tscn" id="4_kaohw"]
 [ext_resource type="Texture2D" uid="uid://dbgl6imhircbg" path="res://Assets/Images/Background and Objects/CARDBOARD.png" id="6_tnyoi"]
 [ext_resource type="Theme" uid="uid://1casi3s2t3el" path="res://resources/button.tres" id="7_j6hv6"]
 
@@ -14,17 +15,16 @@
 [node name="EveningScene" type="Node2D" unique_id=542977085]
 script = ExtResource("1_kaohw")
 package_scene = ExtResource("2_kaohw")
-packages_folder = "res://Assets/Images/Background and Objects/PACKAGES"
+letter_scene = ExtResource("2_tnyoi")
 
 [node name="EveningbackgroundWall" type="Sprite2D" parent="." unique_id=1486245163]
 position = Vector2(576.55554, 323.5)
 scale = Vector2(0.600926, 0.6009259)
 texture = ExtResource("1_5nhsg")
 
-[node name="Eveningshelves" type="Sprite2D" parent="." unique_id=1896474784]
-position = Vector2(576.33325, 324.74997)
-scale = Vector2(0.60046285, 0.6004629)
-texture = ExtResource("2_1l8dv")
+[node name="Pigeonholes" parent="." unique_id=2008360906 instance=ExtResource("4_kaohw")]
+position = Vector2(-55.000004, -47)
+scale = Vector2(1.4799988, 1.4799988)
 
 [node name="Worktable" type="Sprite2D" parent="." unique_id=956903995]
 position = Vector2(578.4444, 490.00003)

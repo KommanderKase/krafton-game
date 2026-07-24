@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://5jswrnv4u43b"]
 
-[ext_resource type="Script" uid="uid://c3t2sv161gn43" path="res://Scenes/scene_transition.gd" id="1_tu0iv"]
+[ext_resource type="Script" uid="uid://c3t2sv161gn43" path="res://Scripts/scene_transition.gd" id="1_tu0iv"]
 [ext_resource type="Texture2D" uid="uid://bfsqf7jumrqrb" path="res://Assets/Images/TRANSITION.png" id="2_ffvj0"]
 
 [node name="SceneTransition" type="CanvasLayer" unique_id=1730397293]
