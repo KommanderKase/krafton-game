@@ -49,20 +49,20 @@ var MAIL_CLASSES: Dictionary = {
 # SAVE/LOAD DATA
 # =============================================================================
 
-class GameSaveData:
-	var day: int = 1
-	var affinities: Dictionary = {}
-	var cover_integrity: int = 100
-	var postman_compromise: int = 0
-	var cumulative_errors: int = 0
+class GameSaveData extends Resource:
+	@export var day: int = 1
+	@export var affinities: Dictionary = {}
+	@export var cover_integrity: int = 100
+	@export var postman_compromise: int = 0
+	@export var cumulative_errors: int = 0
 
 # =============================================================================
 # LIFECYCLE
 # =============================================================================
 
-func _ready():
+func _ready() -> void:
 	# Ensure GameManager persists across scene changes
-	if not is_node_in_group("autoload"):
+	if not is_in_group("autoload"):
 		add_to_group("autoload")
 
 # =============================================================================
