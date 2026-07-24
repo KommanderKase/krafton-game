@@ -215,13 +215,12 @@ texture = ExtResource("5_le5y8")
 
 [node name="MAILMAN OUTLINE" type="Sprite2D" parent="." unique_id=2119328655]
 position = Vector2(216, 169)
-scale = Vector2(0.4041667, 0.4037037)
+scale = Vector2(0.4041667, 0.40370372)
 texture = ExtResource("4_jjwb3")
 
-[node name="MAILMAN" type="Sprite2D" parent="." unique_id=638741522]
+[node name="MAILMAN" type="Sprite2D" parent="MAILMAN OUTLINE" unique_id=638741522]
 texture_filter = 1
-position = Vector2(216, 169)
-scale = Vector2(0.38333678, 0.38333678)
+scale = Vector2(0.9484621, 0.9495498)
 texture = ExtResource("5_ck12u")
 
 [node name="Worktable" type="Sprite2D" parent="." unique_id=94558783]
