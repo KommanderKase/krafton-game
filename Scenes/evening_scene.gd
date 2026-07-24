@@ -11,11 +11,31 @@ var package_textures: Array[Texture2D] = []
 @onready var spawn_button: Button = $SpawnButton
 @onready var spawn_button2: Button = $SpawnButton2
 
+## Pigeonhole drop zones for routing
+@onready var local_pigeonhole: Area2D = $PigeonholeLocal
+@onready var interstate_pigeonhole: Area2D = $PigeonholeInterstate
+
 func _ready() -> void:
 	spawn_button.pressed.connect(_on_spawn_button_pressed)
 	spawn_button2.pressed.connect(_on_spawn_letters)
 	GameManager.set_phase("evening")
 	_load_packages_from_folder()
+	_setup_pigeonholes()
+
+## Set up pigeonhole areas for drop detection
+func _setup_pigeonholes() -> void:
+	if not local_pigeonhole:
+		push_error("PigeonholeLocal not found in scene")
+		return
+	if not interstate_pigeonhole:
+		push_error("PigeonholeInterstate not found in scene")
+		return
+	
+	# Add to group so letter sprites can find them
+	local_pigeonhole.add_to_group("pigeonholes")
+	interstate_pigeonhole.add_to_group("pigeonholes")
+	
+	print("Pigeonholes set up: LOCAL and INTERSTATE")
 
 func _load_packages_from_folder() -> void:
 	if packages_folder.is_empty():
@@ -49,23 +69,35 @@ func _on_spawn_button_pressed() -> void:
 	var random_img = package_textures.pick_random()
 	new_package.setup(random_img, drop_zone.get_global_rect())
 
+## Spawn letters from today's manifest and set up drag-drop routing
 func _on_spawn_letters() -> void:
 	if not letter_scene:
 		print("Warning: No letter scene assigned.")
 		return
+	
 	var all_letters = LetterManager.incoming_pile + LetterManager.outgoing_pile
 	if all_letters.is_empty():
 		print("No letters to spawn — LetterManager piles are empty.")
 		return
+	
+	# Collect drop zones for letter routing
+	var drop_zones = [local_pigeonhole, interstate_pigeonhole]
+	
 	var offset := Vector2.ZERO
 	for letter_data in all_letters:
-		var letter_instance = letter_scene.instantiate()
+		var letter_instance = letter_scene.instantiate() as LetterSprite
 		add_child(letter_instance)
 		letter_instance.global_position = spawn_point.global_position + offset
-		letter_instance.setup(letter_data, drop_zone.get_global_rect())
+		
+		# Set up letter with data and drop zones
+		letter_instance.setup(letter_data, drop_zones)
+		
 		offset.x += 15
 		offset.y += 8
+	
+	print("Spawned %d letters with routing zones" % all_letters.size())
 
+## Called to end the evening and move to night
 func _on_end_of_day() -> void:
 	GameManager.end_of_day()
 	get_tree().change_scene_to_file("res://Scenes/night_scene.tscn")
