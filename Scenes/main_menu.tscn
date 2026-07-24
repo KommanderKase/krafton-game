@@ -8,9 +8,10 @@
 [ext_resource type="Script" uid="uid://c0p0l8titvk8q" path="res://Scripts/start.gd" id="3_jix8l"]
 [ext_resource type="Texture2D" uid="uid://dba3dq62p4iqe" path="res://Assets/Images/Background and Objects/Vehicles/BIKE MOTIONBLURRED.png" id="4_vtepg"]
 [ext_resource type="Texture2D" uid="uid://c13gff6yl4qhe" path="res://Assets/Images/Background and Objects/Vehicles/BROWNCAR MOTIONBLURRED.png" id="5_8dnnj"]
-[ext_resource type="Texture2D" uid="uid://bfsqf7jumrqrb" path="res://Assets/Images/TRANSITION.png" id="5_n45e2"]
 [ext_resource type="Texture2D" uid="uid://2bqjptcqj0fj" path="res://Assets/Images/Background and Objects/Vehicles/GREENCAR MOTIONBLURRED.png" id="6_m3bi6"]
 [ext_resource type="Texture2D" uid="uid://smbvmnytdm6r" path="res://Assets/Images/Background and Objects/Vehicles/GREYCAR MOTIONBLURRED.png" id="7_wyh8j"]
+[ext_resource type="Script" uid="uid://b0lwwn5bh5rxy" path="res://Scenes/transition_debug_button.gd" id="11_t1dhk"]
+[ext_resource type="PackedScene" uid="uid://5jswrnv4u43b" path="res://Scenes/SceneTransition.tscn" id="11_vr1f0"]
 
 [node name="Main Menu" type="Node2D" unique_id=1883568903]
 script = ExtResource("1_dy5lf")
@@ -24,23 +25,23 @@ texture = ExtResource("2_t1dhk")
 script = ExtResource("3_5egv6")
 
 [node name="Bicycle" type="Sprite2D" parent="Traffic" unique_id=1475418227]
-position = Vector2(397, 305.565)
-scale = Vector2(0.45, 0.45)
+position = Vector2(-423, -234)
+scale = Vector2(0.27, 0.27)
 texture = ExtResource("4_vtepg")
 
 [node name="Car1" type="Sprite2D" parent="Traffic" unique_id=1122151160]
-position = Vector2(397, 305.565)
-scale = Vector2(0.45, 0.45)
+position = Vector2(-423, -234)
+scale = Vector2(0.27, 0.27)
 texture = ExtResource("5_8dnnj")
 
 [node name="Car2" type="Sprite2D" parent="Traffic" unique_id=327976267]
-position = Vector2(397, 305.565)
-scale = Vector2(0.45, 0.45)
+position = Vector2(-423, -234)
+scale = Vector2(0.27, 0.27)
 texture = ExtResource("6_m3bi6")
 
 [node name="Car3" type="Sprite2D" parent="Traffic" unique_id=1328549130]
-position = Vector2(397, 305.565)
-scale = Vector2(0.45, 0.45)
+position = Vector2(-423, -234)
+scale = Vector2(0.27, 0.27)
 texture = ExtResource("7_wyh8j")
 
 [node name="Button_manager" type="Control" parent="." unique_id=824363428]
@@ -52,6 +53,7 @@ offset_right = 643.0
 offset_bottom = 156.0
 
 [node name="Start" type="Button" parent="Button_manager" unique_id=749278499]
+visible = false
 layout_mode = 0
 offset_left = 11.0
 offset_top = 167.0
@@ -63,6 +65,7 @@ alignment = 0
 script = ExtResource("3_jix8l")
 
 [node name="Settings" type="Button" parent="Button_manager" unique_id=2093249924]
+visible = false
 layout_mode = 0
 offset_left = 12.0
 offset_top = 249.0
@@ -73,6 +76,7 @@ text = "SETTINGS"
 alignment = 0
 
 [node name="Quit" type="Button" parent="Button_manager" unique_id=92168929]
+visible = false
 layout_mode = 0
 offset_left = 11.0
 offset_top = 334.0
@@ -83,6 +87,7 @@ text = "QUIT"
 alignment = 0
 
 [node name="MorningDebugButton" type="Button" parent="Button_manager" unique_id=1550258989]
+visible = false
 layout_mode = 0
 offset_left = 283.0
 offset_top = 168.0
@@ -116,11 +121,18 @@ alignment = 0
 stream = ExtResource("3_fu7sn")
 autoplay = true
 
-[node name="Transition" type="Sprite2D" parent="." unique_id=672639473]
+[node name="TransitionDebugButton" type="Button" parent="." unique_id=1236108155]
+offset_left = 464.0
+offset_top = 530.0
+offset_right = 711.0
+offset_bottom = 595.0
+theme = ExtResource("2_7gogf")
+text = "START"
+script = ExtResource("11_t1dhk")
+target_scene = "uid://b3qukhixynan0"
+
+[node name="SceneTransition" parent="." unique_id=1730397293 instance=ExtResource("11_vr1f0")]
 visible = false
-position = Vector2(581, 327)
-scale = Vector2(0.37400797, 0.6238426)
-texture = ExtResource("5_n45e2")
 
 [connection signal="pressed" from="Button_manager/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Button_manager/Quit" to="." method="_on_quit_pressed"]

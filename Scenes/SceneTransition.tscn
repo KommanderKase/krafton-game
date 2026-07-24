@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://5jswrnv4u43b"]
+
+[ext_resource type="Script" uid="uid://c3t2sv161gn43" path="res://Scenes/scene_transition.gd" id="1_tu0iv"]
+[ext_resource type="Texture2D" uid="uid://bfsqf7jumrqrb" path="res://Assets/Images/TRANSITION.png" id="2_ffvj0"]
+
+[node name="SceneTransition" type="CanvasLayer" unique_id=1730397293]
+layer = 100
+script = ExtResource("1_tu0iv")
+
+[node name="GradientImage" type="TextureRect" parent="." unique_id=1986567360]
+offset_left = -2073.0
+offset_top = -242.0
+offset_right = 3045.0
+offset_bottom = 838.0
+mouse_filter = 2
+texture = ExtResource("2_ffvj0")
+expand_mode = 1

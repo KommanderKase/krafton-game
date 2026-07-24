@@ -43,10 +43,17 @@ texture = ExtResource("6_tnyoi")
 script = SubResource("GDScript_kaohw")
 
 [node name="DropZone" type="ReferenceRect" parent="." unique_id=757820317]
-offset_left = -3.0
-offset_top = 490.0
-offset_right = 681.0
-offset_bottom = 817.0
+offset_left = 140.0
+offset_top = 100.0
+offset_right = 706.0
+offset_bottom = 365.0
+mouse_filter = 2
+
+[node name="DropZone2" type="ReferenceRect" parent="." unique_id=1843890211]
+offset_left = 127.0
+offset_top = 614.0
+offset_right = 811.0
+offset_bottom = 941.0
 mouse_filter = 2
 
 [node name="SpawnButton" type="Button" parent="." unique_id=1685208494]

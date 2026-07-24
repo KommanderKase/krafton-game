@@ -33,3 +33,7 @@ func DialogicSignal(argument:String):
 		_animator.active = true
 		_letter.visible = true
 		_animator.play("letter_give")
+	
+	if argument.begins_with("res://") and argument.ends_with(".tscn"):
+		Dialogic.end_timeline()
+		SceneTransition.transition_to_scene(argument)
